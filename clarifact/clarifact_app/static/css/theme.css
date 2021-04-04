@@ -1644,7 +1644,7 @@
 ------------------------------------------------------*/
 .chooseUs{
     background-color: #ffffff;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 .chooseUs_title{
     margin: 0;
@@ -1686,7 +1686,8 @@
 }
 .wh_choose{
     position: relative;
-    margin: 51px 0 0;
+    
+    margin: 75px 145px 16px;
 }
 .wh_choose p{
     margin: 0 0 25px;
