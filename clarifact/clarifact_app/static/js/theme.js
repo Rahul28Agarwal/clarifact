@@ -510,7 +510,7 @@ License URI:
     });
     
     /*--------------------------------------------------------
-    / 14. Bact To Top Button
+    / 14. Back To Top Button
     /----------------------------------------------------------*/
     var back = $("#backToTop"),
             body = $("body, html");
@@ -528,6 +528,24 @@ License URI:
     body.on("click", "#backToTop", function (e) {
         e.preventDefault();
         body.animate({scrollTop: 0}, 800);
+    });
+
+    var home = $("#backToTop_home"),
+    body = $("body, html");
+    $(window).on('scroll', function () {
+    var h = $(window).height() / 2;
+    if ($(window).scrollTop() > h)
+    {
+        back.addClass('showit');
+    } else
+    {
+        back.removeClass('showit');
+    }
+
+    });
+    body.on("click", "#backToTop_home", function (e) {
+    e.preventDefault();
+    body.animate({scrollTop: 0}, 800);
     });
     
     /*--------------------------------------------------------

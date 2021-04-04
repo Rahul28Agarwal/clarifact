@@ -1,0 +1,31 @@
+{% load static %}
+<header class="header_01" id="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2 col-sm-3 col-md-3">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src=" {% static 'images/logo_clarifact1.png' %} " alt=""/></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-sm-7 col-md-7">
+                        <nav class="mainmenu text-center">
+                            <ul>
+                                
+                                <li><a href="/spot_fake_news">Spot Fake News</a></li>
+                                <li><a href=''>Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div class="navigator text-right">
+                    
+                            <a href= "javascript:void(0) " class="menu mobilemenu hidden-sm hidden-md hidden-lg hidden-xs"><i class="mei-menu"></i></a>
+                            <a id="open-overlay-nav" class="menu hamburger" href=" javascript:void(0) "><i class="mei-menu"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+{% block  section_nav%}
+{% endblock %}
