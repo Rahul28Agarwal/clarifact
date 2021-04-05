@@ -1,13 +1,3 @@
-/*
-Theme Name: Meipaly
-Theme URI: http://layerdrops.com/
-Author: Layerdrops
-Author URI: http://layerdrops.com/
-Description: Meipaly - Digital Services Agency HTML5 Responsive Template
-Version: 1.0
-License:
-License URI:
-*/
 
 /*=======================================================================
 [Table of contents]
@@ -59,7 +49,7 @@ License URI:
 }
 .logo{
     text-align: left;
-    padding: 0 0 3px;
+    padding: 0 0 9px;
 }
 .logo img{
     max-width: 100%;
@@ -81,7 +71,7 @@ License URI:
 }
 .mainmenu ul li a{
     display: block;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     line-height: .8;
     text-transform: uppercase;
@@ -92,7 +82,7 @@ License URI:
     width: 0;
     height: 1px;
     content: '';
-    background: #fff;
+    background: #c11e1e;
     left: 0;
     right: 0;
     bottom: -5px;
@@ -102,14 +92,14 @@ License URI:
 }
 .mainmenu ul > li.active > a,
 .mainmenu ul li a:hover{
-    color: #fff;
+    color: #c11e1e;
 }
 .mainmenu ul > li.active > a:after,
 .mainmenu ul li a:hover:after{
     width: 100%;
 }
 .mainmenu ul ul.sub-menu {
-    background: #000;
+    background: #fff;
     width: 200px;
     z-index: 9;
     text-align: center;
@@ -167,7 +157,7 @@ License URI:
 }
 .navigator a{
     display: inline-block;
-    color: #fff;
+    color: #000;
     line-height: .8;
     font-size: 25px;
     margin: 0;
@@ -199,7 +189,7 @@ License URI:
     color: #e62b4a;
 }
 .fixedHeader {
-    background: #000;
+    background: #fff;
     left: 0;
     position: fixed;
     right: 0;
@@ -317,9 +307,20 @@ License URI:
     -moz-transition: all ease 400ms;
     -webkit-transition: all ease 400ms;
 }
-.icon_box_1 .back p,.icon_box_1 .back h3,
-.icon_box_1 .front h3,.icon_box_1 .front p {
+.icon_box_1 .back p,.icon_box_1 .front p {
     font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    color: #aaaaaa;
+    margin: 0;
+    transition: all ease 400ms;
+    -moz-transition: all ease 400ms;
+    -webkit-transition: all ease 400ms;
+}
+.icon_box_1 .back h1,
+.icon_box_1 .front h1 {
+    
     line-height: 20px;
     font-weight: 400;
     text-transform: uppercase;
@@ -376,7 +377,7 @@ License URI:
     -ms-transform: rotateY(0deg);
     background: transparent;
     z-index: 2;
-    border: 2px solid rgba(27, 27, 27, 1);
+    border: 2px solid #fff;
     padding: 48px 45px 45px;
     width: 100%;
 }
@@ -414,7 +415,7 @@ License URI:
 .custom_column .col-lg-3{
     width: 20%;
 }
-.icon_box_1 .back h3,.icon_box_1 .back p,
+.icon_box_1 .back h1,.icon_box_1 .back p,
 .icon_box_1 .back i{
     color: #ffffff;
 }
@@ -679,7 +680,15 @@ License URI:
     position: relative;
     padding-top: 113px;
 }
-.singlefunfact h1{
+/* .singlefunfact h1{
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: 2.4px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 0 25px;
+} */
+.timer{
     font-size: 60px;
     line-height: 1;
     letter-spacing: 2.4px;
@@ -1627,11 +1636,16 @@ License URI:
 .dots_owl .owl-dot:hover{
     background: #fff;
 }
-
+.why_section{
+    background-color: #fbf9f9;
+}
 /*----------------------------------------------------
 / 18. Why Choose Us Section
 ------------------------------------------------------*/
-.chooseUs{}
+.chooseUs{
+    background-color: #ffffff;
+    padding: 20px 0;
+}
 .chooseUs_title{
     margin: 0;
     padding: 0;
@@ -1672,7 +1686,8 @@ License URI:
 }
 .wh_choose{
     position: relative;
-    margin: 51px 0 0;
+    
+    margin: 75px 145px 16px;
 }
 .wh_choose p{
     margin: 0 0 25px;
@@ -1816,7 +1831,7 @@ License URI:
 .pageBanner {
     position: relative;
     min-height: 465px;
-    background: url(../images/bg/8.jpg) no-repeat center center / cover;
+    background: url(../images/bg/white_background.jpg) no-repeat center center / cover;
     padding-top: 224px;
 }
 .banner_content{
@@ -1829,6 +1844,9 @@ License URI:
     letter-spacing: 1.8px;
     text-transform: uppercase;
     margin: 0 0 12px;
+}
+.banner_content .expert{
+    color:#000
 }
 .banner_content h4 a{
     color: #fff;
