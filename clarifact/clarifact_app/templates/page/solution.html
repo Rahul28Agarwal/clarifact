@@ -1,122 +1,578 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BootstrapDash Wizard</title>
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{% static 'css/bd-wizard.css' %}">
-  <!-- {% static 'css/bootstrap.css' %} -->
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img src="assets/images/logo.svg" alt="logo"></a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main class="d-flex align-items-center">
-    <div class="container">
-        <div id="wizard">
-          <h3>Step 1 Title</h3>
-          <section>
-           <h5 class="bd-wizard-step-title">Step 1</h5>
-           <h2 class="section-heading">Select business type </h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-           <div class="purpose-radios-wrapper">
-              <div class="purpose-radio">
-                  <input type="radio" name="purpose" id="branding" class="purpose-radio-input" value="Branding" checked>
-                 <label for="branding" class="purpose-radio-label">
-                   <span class="label-icon">
-                     <img src="assets/images/icon_branding.svg" alt="branding" class="label-icon-default">
-                     <img src="assets/images/icon_branding_green.svg" alt="branding" class="label-icon-active">
-                   </span>
-                   <span class="label-text">Branding</span>
-                 </label>
-                </div>
-                <div class="purpose-radio">
-                   <input type="radio" name="purpose" id="mobile-design" class="purpose-radio-input" value="Moile Design">
-                  <label for="mobile-design" class="purpose-radio-label">
-                    <span class="label-icon">
-                      <img src="assets/images/icon_mobile_design.svg" alt="branding" class="label-icon-default">
-                      <img src="assets/images/icon_mobile_design_green.svg" alt="branding" class="label-icon-active">
-                    </span>
-                    <span class="label-text">Moile Design</span>
-                  </label>
-                 </div>
-                 <div class="purpose-radio">
-                     <input type="radio" name="purpose" id="web-design" class="purpose-radio-input" value="Web Design">
-                    <label for="web-design" class="purpose-radio-label">
-                      <span class="label-icon">
-                        <img src="assets/images/icon_web_design.svg" alt="branding" class="label-icon-default">
-                        <img src="assets/images/icon_web_design_green.svg" alt="branding" class="label-icon-active">
-                      </span>
-                      <span class="label-text">Web Design</span>
-                    </label>
-                   </div>
-           </div>
-          </section>
-          <h3>Step 2 Title</h3>
-          <section>
-            <h5 class="bd-wizard-step-title">Step 2</h5>
-            <h2 class="section-heading">Enter your Account Details</h2>
-            <div class="form-group">
-              <label for="firstName" class="sr-only">First Name</label>
-              <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name">
-            </div>
-            <div class="form-group">
-              <label for="lastName" class="sr-only">Last Name</label>
-              <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-              <label for="phoneNumber" class="sr-only">Phone Number</label>
-              <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Phone Number">
-            </div>
-            <div class="form-group">
-              <label for="emailAddress" class="sr-only">Email Address</label>
-              <input type="email" name="emailAddress" id="emailAddress" class="form-control" placeholder="Email Address">
-            </div>
-          </section>
-          <h3>Step 3 Title</h3>
-          <section>
-              <h5 class="bd-wizard-step-title">Step 3</h5>
-              <h2 class="section-heading mb-5">Review your Details and Submit</h2>
-              <h6 class="font-weight-bold">Select business type</h6>
-              <p class="mb-4" id="business-type">Branding</p>
-              <h6 class="font-weight-bold">Enter your Account Details</h6>
-              <p class="mb-4"><span id="enteredFirstName">Cha</span> <span id="enteredLastName">Ji-Hun C</span> <br>
-                  Phone: <span id="enteredPhoneNumber">+230-582-6609</span> <br>
-                  Email: <span id="enteredEmailAddress">willms_abby@gmail.com</span></p>
+{% extends "page/header.html" %}
 
-          </section>
+{% load static %}
+
+    {% block content %}
+        <!-- Preloading -->
+       
+        <!-- Preloading -->
+        {% include 'page/preloader.html' %}
+        <!-- Header 01 -->
+        {% include 'page/section_nav_bar.html' %}
+        <!-- Header 01 -->
+
+        
+
+        <!-- PopUP Menu -->
+        <div class="popup popup__menu">
+            <a href=" {% static '' %} " id="close-popup" class="close-popup"></a>
+            <div class="container mobileContainer">
+                <div class="row">
+                    <div class="col-lg-12 text-left">
+                        <div class="logo2">
+                            <a href=" {% static 'index.html' %} "><img src=" {% static 'images/logo.png' %} " alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="popup-inner">
+                            <div class="dl-menu__wrap dl-menuwrapper">
+                                <ul class="dl-menu dl-menuopen">
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">home</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'index.html' %} ">Home 01</a></li>
+                                            <li><a href=" {% static 'index2.html' %} ">Home 02</a></li>
+                                            <li><a href=" {% static 'index3.html' %} ">Home 03</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href=" {% static 'about.html' %} ">About</a></li>
+                                    <li class="menu-item-has-children"><a href=" {% static 'javascript:void(0);' %} ">services</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'services.html' %} ">Service</a></li>
+                                            <li><a href=" {% static 'service_detail.html' %} ">Service Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">Portfolio</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'portfolio.html' %} ">Portfolio v1</a></li>
+                                            <li><a href=" {% static 'portfolio2.html' %} ">Portfolio v2</a></li>
+                                            <li><a href=" {% static 'portfolio_detail.html' %} ">Portfolio Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">Blog</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'blog.html' %} ">Blog v1</a></li>
+                                            <li><a href=" {% static 'blog2.html' %} ">Blog v2</a></li>
+                                            <li><a href=" {% static 'blog3.html' %} ">Blog v3</a></li>
+                                            <li><a href=" {% static 'blog_single.html' %} ">Blog Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href=" {% static 'contact.html' %} ">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+                        <ul class="footer__contacts text-left">
+                            <li>Phone: 666 888 000</li>
+                            <li>Email: needhelp@meipaly.com</li>
+                            <li>Address: 66 Broklyn Street, New York United States of America</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-12 col-xs-12">
+                        <div class="popUp_social text-right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="{% static 'js/jquery.steps.min.js' %}"></script>
-  <script src="{% static 'js/bd-wizard.js' %}"></script>
-</body>
-</html>
+        <!-- PopUP Menu -->
+
+        <!-- Page Banner -->
+        <section class="pageBanner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner_content text-center">
+                            
+                            <h1 class='expert'>How to detect fake news?</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Banner -->
+
+
+        <!-- Agency Section -->
+                <!-- Why Choose Section -->
+                <section  class="commonSection chooseUs">
+                    <div class="container">
+                        <!-- <div class="row">
+                            <div class="col-lg-12 text-center">
+                                
+                                <h2 class="sec_title">How to detect fake news?</h2>
+                                <p class="sec_desc">
+                                    
+                                </p>
+                            </div>
+                        </div> -->
+                        
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>1. </strong> 
+                                            <span >Consider the Source</span>
+                                        </h2>
+                                        <p>Fake news always use dramatic headlines, intriguing images and ads to catch your eyes.
+                                             While after you click on them, it takes you to an article that’s unrelated to the headline.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="tab-pane" id="tes_tab_2">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>2. </strong> 
+                                            <span >Check the Author</span>
+                                        </h2>
+                                        <p>
+                                            It is easy to identify the fake news from its content since fake news are normally lake of evidence to justify their argument when you getting through into the details.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>3. </strong> 
+                                            <span >Check the Date</span>
+                                        </h2>
+                                        <p>Fake news always use dramatic headlines, intriguing images and ads to catch your eyes.
+                                             While after you click on them, it takes you to an article that’s unrelated to the headline.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="tab-pane" id="tes_tab_2">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>4. </strong> 
+                                            <span >Check for Biases</span>
+                                        </h2>
+                                        <p>
+                                            It is easy to identify the fake news from its content since fake news are normally lake of evidence to justify their argument when you getting through into the details.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>5. </strong> 
+                                            <span >Read Beyond</span>
+                                        </h2>
+                                        <p>Fake news always use dramatic headlines, intriguing images and ads to catch your eyes.
+                                             While after you click on them, it takes you to an article that’s unrelated to the headline.
+                                        </p>
+                                        <a class="common_btn red_bg" href="{% url 'read_beyond' %}"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="tab-pane" id="tes_tab_2">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>6. </strong> 
+                                            <span >Supporting Sources</span>
+                                        </h2>
+                                        <p>
+                                            It is easy to identify the fake news from its content since fake news are normally lake of evidence to justify their argument when you getting through into the details.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>7. </strong> 
+                                            <span >Ask the Experts</span>  
+                                        </h2>
+                                        <p>Fake news always use dramatic headlines, intriguing images and ads to catch your eyes.
+                                             While after you click on them, it takes you to an article that’s unrelated to the headline.
+                                        </p>
+                                        <a class="common_btn red_bg" href="{% url 'ask_expert' %} "><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        
+                    </div>
+                </section>
+                <!-- Why Choose Section -->
+
+        <!-- Testimonial 2 Section -->
+        <section class="commonSection testimonial_2">
+            <div class="container">
+                <div class="row">
+                    <div id="tabs" class="testimoniTab">
+                        <div class="col-lg-5 col-sm-5">
+                            <h4 class="sub_title color_aaa">our testimonials</h4>
+                            <h2 class="sec_title white">happy customers</h2>
+                            <ul class="slider_testimoial">
+                                <li class="active control_item">
+                                    <a href=" {% static '#tab_1' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t1.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Shirley Smith</h5>
+                                            <h6>Director</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_2' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t2.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike hardson</h5>
+                                            <h6>co founder</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_3' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t3.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike Smith</h5>
+                                            <h6>manager</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_4' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t1.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Shirley Smith</h5>
+                                            <h6>Director</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_5' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t2.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike hardson</h5>
+                                            <h6>manager</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_6' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t3.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike Smith</h5>
+                                            <h6>manager</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-7 col-sm-7">
+                            <div class="dots_owl"></div>
+                            <div class="tab-content clearfix">
+                                <div class="tab-pane fade in active testi_con" id="tab_1">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>25 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_2">
+                                    <p>
+                                        “It’s throughly refresing to get such a personal touch. There are many variations of passages of available,
+                                        This is due to their excellent service, competitive pricing and customer support. 
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>26 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_3">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>27 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_4">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>28 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_5">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>29 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_6">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>30 nov, 2018</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial 2 Section -->
+
+        <!-- Subscribe Section -->
+        <!-- <section class="commonSection subscribe">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-5 col-md-4">
+                        <h4 class="sub_title">don’t miss out our latest updates</h4>
+                        <h2 class="sec_title">Subscribe us</h2>
+                    </div>
+                    <div class="col-lg-8 col-sm-7 col-md-8">
+                        <form action="" method="post" class="subscribefrom">
+                            <input type="email" placeholder="Enter your email" name="email">
+                            <button class="common_btn red_bg" type="submit" name="submit"><span>Subscribe now</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Subscribe Section -->
+
+        <!-- Team Section -->
+        <section class="commonSection team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="sub_title">meet the team</h4>
+                        <h2 class="sec_title">expert people</h2>
+                        <p class="sec_desc">
+                            We are committed to providing our customers with exceptional service while<br> offering our employees the best training.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="team_slider">
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/1.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>kevin smith</h5>
+                        <h6>co founder</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/2.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>Jessica Brown</h5>
+                        <h6>General Manager</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/3.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>Mike Hardson</h5>
+                        <h6>Senior Designer</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/4.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>Rose Ford</h5>
+                        <h6>Marketing manager</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/5.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>John Albert</h5>
+                        <h6>Brand Officer</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team Section -->
+
+        <!-- Our Work Section -->
+        <section class="commonSection our_work">
+            <div class="videoWrap_2">
+                <img src=" {% static 'images/about/3.jpg' %} " alt="">
+                <div class="play_video">
+                    <a class="video_popup" href="https://www.youtube.com/watch?v=A7ZkZazfvao"><i class="fa fa-play"></i></a>
+                    <h2>Watch Video</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="ab_detail_wrap">
+                            <h4 class="sub_title">the only design you need</h4>
+                            <h2 class="sec_title">Make amazing websites without touching cod</h2>
+                            <p class="sec_desc">
+                                Tincidunt elit magnis nulla facilisis sagittis maecenas. Sapien nunc amet ultrices, 
+                                dolores sit ipsum velit purus aliquet, massa fringilla leo orci. Lorem ipsum
+                                dolors sit amet elit magnis amet ultrices purus aliquet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Work Section -->
+
+
+
+        <!-- Ready Section -->
+        <!-- <section class="commonSection ready">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-sm-8 col-md-9">
+                        <h2 class="sec_title white">Let's Get Your Project Started!</h2>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-md-3 text-right">
+                        <a class="common_btn" href=" {% static 'contact.html' %} "><span>Contact with us</span></a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Ready Section -->
+
+        <!-- Footer Section -->
+        
+        {% include 'page/footer.html' %}
+        <!-- Footer Section -->
+
+        <!-- Bact To To -->
+        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
+        <!-- Bact To To -->
+
+{% endblock %}
