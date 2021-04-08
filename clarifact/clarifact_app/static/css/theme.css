@@ -566,6 +566,10 @@
 .porfolio{
     padding-bottom: 90px;
 }
+#consequences{
+    background-color: #edeaea;
+    padding: 25px 0;
+}
 .singlefolio {
     position: relative;
     overflow: hidden;
@@ -589,6 +593,9 @@
     -moz-transition: all ease 900ms;
     -webkit-transition: all ease 900ms;
     -o-transition: all ease 900ms;
+}
+.description{
+    font-size : 20px 
 }
 .singlefolio:after{
     position: absolute;
@@ -1644,8 +1651,9 @@
 ------------------------------------------------------*/
 .chooseUs{
     background-color: #ffffff;
-    padding: 20px 0;
+    padding: 20px 0px 40px 0px;
 }
+
 .chooseUs_title{
     margin: 0;
     padding: 0;
