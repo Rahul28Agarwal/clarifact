@@ -1,0 +1,303 @@
+{% extends "page/header.html" %}
+
+{% load static %}
+
+    {% block content %}
+        <!-- Preloading -->
+       
+        <!-- Preloading -->
+        {% include 'page/preloader.html' %}
+        <!-- Header 01 -->
+        {% include 'page/section_nav_bar.html' %}
+        <!-- Header 01 -->
+
+        
+
+        <!-- PopUP Menu -->
+        <div class="popup popup__menu">
+            <a href=" {% static '' %} " id="close-popup" class="close-popup"></a>
+            <div class="container mobileContainer">
+                <div class="row">
+                    <div class="col-lg-12 text-left">
+                        <div class="logo2">
+                            <a href=" {% static 'index.html' %} "><img src=" {% static 'images/logo.png' %} " alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="popup-inner">
+                            <div class="dl-menu__wrap dl-menuwrapper">
+                                <ul class="dl-menu dl-menuopen">
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">home</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'index.html' %} ">Home 01</a></li>
+                                            <li><a href=" {% static 'index2.html' %} ">Home 02</a></li>
+                                            <li><a href=" {% static 'index3.html' %} ">Home 03</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href=" {% static 'about.html' %} ">About</a></li>
+                                    <li class="menu-item-has-children"><a href=" {% static 'javascript:void(0);' %} ">services</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'services.html' %} ">Service</a></li>
+                                            <li><a href=" {% static 'service_detail.html' %} ">Service Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">Portfolio</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'portfolio.html' %} ">Portfolio v1</a></li>
+                                            <li><a href=" {% static 'portfolio2.html' %} ">Portfolio v2</a></li>
+                                            <li><a href=" {% static 'portfolio_detail.html' %} ">Portfolio Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">Blog</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'blog.html' %} ">Blog v1</a></li>
+                                            <li><a href=" {% static 'blog2.html' %} ">Blog v2</a></li>
+                                            <li><a href=" {% static 'blog3.html' %} ">Blog v3</a></li>
+                                            <li><a href=" {% static 'blog_single.html' %} ">Blog Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href=" {% static 'contact.html' %} ">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+                        <ul class="footer__contacts text-left">
+                            <li>Phone: 666 888 000</li>
+                            <li>Email: needhelp@meipaly.com</li>
+                            <li>Address: 66 Broklyn Street, New York United States of America</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-12 col-xs-12">
+                        <div class="popUp_social text-right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PopUP Menu -->
+
+        <!-- Page Banner -->
+        <section class="pageBanner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner_content text-center">
+                            
+                            <h1 class='expert'>How to detect fake news?</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Banner -->
+
+
+        <!-- Agency Section -->
+                <!-- Why Choose Section -->
+                <section  class="commonSection chooseUs">
+                    <div class="container">
+                        <!-- <div class="row">
+                            <div class="col-lg-12 text-center">
+                                
+                                <h2 class="sec_title">How to detect fake news?</h2>
+                                <p class="sec_desc">
+                                    
+                                </p>
+                            </div>
+                        </div> -->
+                        
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>1. </strong> 
+                                            <span >Consider the Source</span>
+                                        </h2>
+                                        <p class='description'>News stories or articles from well-know news outlets such as ABC news, world health organisation, world trade organisation, 9news, 
+                                            Sydney morning herald etc are far more reliable than sites such as Facebook, WhatsApp university, twitter etc.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="tab-pane" id="tes_tab_2">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>2. </strong> 
+                                            <span >Check the Author</span>
+                                        </h2>
+                                        <p class='description'>
+                                            Check the author’s bio and do a quick search on them. Are they credible to write about their story? Are they real? Are they experienced?
+                                            <br>
+                                            <strong>Trust the author before you trust the news!</strong>
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>3. </strong> 
+                                            <span >Check the Date</span>
+                                        </h2>
+                                        <p class='description'>
+                                            <strong>"Change is the only constant"</strong>. What news might have been correct at some point of time, might be fake in today’s time! 
+                                            It is important to stay updated with the correct version of news.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="tab-pane" id="tes_tab_2">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>4. </strong> 
+                                            <span >Check for Biases</span>
+                                        </h2>
+                                        <p class='description'>
+                                            Especially with the rise of opinionated journalism and websites profiting from polarization, 
+                                            consider the intended audience for this story and if your <strong>own beliefs</strong> could affect your judgement.
+
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>5. </strong> 
+                                            <span >Read Beyond</span>
+                                        </h2>
+                                        <p class='description'>
+                                            Even legitimate news sources will sometimes use misleading headlines.
+                                             As you're reading the article, ask yourself if the content matches the headline. 
+                                             If there are clues whether an article is fake or not, there are going to be more of 
+                                             them in the body of the article, not the title. <strong>Read beyond the headline and decide for yourself!</strong>
+                                        </p>
+                                        <a class="common_btn red_bg" href="{% url 'read_beyond' %}"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class="tab-pane" id="tes_tab_2">
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>6. </strong> 
+                                            <span >Supporting Sources</span>
+                                        </h2>
+                                        <p class='description'>
+                                            As quoted by Jolene Engle, <strong>“For Two are Better than One, but Three is Even Better”.</strong> 
+                                            Multiple sources provide higher scrutiny and investigation of news. It helps improve in-depth knowledge. 
+                                            More research lets one explore from different angles and perspectives.
+                                        </p>
+                                        <a class="common_btn red_bg" href="#"><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="tab-pane " id="tes_tab_1">
+                                <div class="col-lg-7 col-sm-7 col-md-7">
+                                    <div class="wh_choose">
+                                        <h2>
+                                            <strong>7. </strong> 
+                                            <span >Ask the Experts</span>  
+                                        </h2>
+                                        <p class='description'>
+                                            Supplement your research with an expert advice from those who know the best. Ask questions that have not been answered. Seek knowledge from trustworthy organisations and respective intellectuals.
+                                        </p>
+                                        <a class="common_btn red_bg" href="{% url 'ask_expert' %} "><span>Learn More</span></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-sm-5 col-md-5">
+                                    <div class="chose_img">
+                                        <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        
+                    </div>
+                </section>
+                <!-- Why Choose Section -->
+
+  
+
+
+
+
+
+
+        <!-- Footer Section -->
+        
+        {% include 'page/footer.html' %}
+        <!-- Footer Section -->
+
+        <!-- Bact To To -->
+        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
+        <!-- Bact To To -->
+
+{% endblock %}

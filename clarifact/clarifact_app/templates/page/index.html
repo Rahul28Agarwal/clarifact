@@ -13,23 +13,27 @@
                 <div class="row">
                     <div class="col-lg-2 col-sm-3 col-md-3">
                         <div class="logo">
-                            <!-- <a href=""><img src=" {% static 'images/foo_logo_clarifact.png' %} " alt=""/></a> -->
-                            <h3 style="color:white;">Clarifact</h3>
+                            <a href="{% url 'index' %}"><img src=" {% static 'images/logo_clarifact1.png' %} " alt=""/></a>
+                            <!-- <h3 style="color:white;">Clarifact</h3> -->
                         </div>
                     </div>
                     <div class="col-lg-8 col-sm-7 col-md-7">
                         <nav class="mainmenu text-center">
                             <ul>
                                 <li class="menu-item-has-children">
-                                    <a href="index.html">home</a>
+                                    <a href="#" id='backToTop_home'>home</a>
                                 </li>
-                                <li><a href=" about.html ">About</a></li>
-                                <li class="menu-item-has-children"><a href="#">Services</a>
+                                <li><a href="#but_why">But Why?</a></li>
+                                <!-- <li><a href="#about">About</a></li> -->
+                                <li><a href="#consequences">Consequences</a></li>
+                                <!-- <li class="menu-item-has-children"><a href="#">Services</a>
                                     <ul class="sub-menu">
                                         <li><a href=" {% static 'services.html' %} ">Spot Fake News</a></li>
                                         <li><a href=" {% static 'service_detail.html' %} ">Quiz</a></li>
                                     </ul>
-                                </li>
+                                </li> -->
+                                <li><a href="{% url 'solution' %}">Spot Fake News</a></li>
+                                <li><a href=''>Quiz</a></li>
 
                             </ul>
                         </nav>
@@ -77,24 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
-                        <ul class="footer__contacts text-left">
-                            <li>Phone: 666 888 000</li>
-                            <li>Email: needhelp@meipaly.com</li>
-                            <li>Address: 66 Broklyn Street, New York United States of America</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-xs-12 col-xs-12">
-                        <div class="popUp_social text-right">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                                <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
         <!-- PopUP Menu -->
@@ -107,7 +94,7 @@
                         <!-- MINIMUM SLIDE STRUCTURE -->
                         <li data-transition="random" data-masterspeed="1000">
                             <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-                            <img src=" {% static 'images/slider/1_1.jpg' %} " alt="Sky" class="rev-slidebg">
+                            <img src=" {% static 'images/slider/1_1.png' %} " alt="Sky" class="rev-slidebg">
                             <div class="tp-caption tp-resizeme normalWraping layer_1" 
 
                                  data-frames='[{"delay":1300,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},
@@ -163,8 +150,9 @@
                                  data-fontsize="16"
                                  data-lineheight=""
                                  data-fontweight="400"
-                                 data-textAlign="center"
-                                 ><a href="#" class="common_btn"><span>DISCOVER MORE</span></a></div>
+                                 data-textAlign="center"> 
+                            <!-- <a href="#" class="common_btn"><span>DISCOVER MORE</span></a> -->
+                                </div>
                         </li>
                         <li data-transition="random" data-masterspeed="1000">
                             <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
@@ -225,7 +213,9 @@
                                  data-lineheight=""
                                  data-fontweight="400"
                                  data-textAlign="center"
-                                 ><a href="#" class="common_btn"><span>DISCOVER MORE</span></a></div>
+                                 >
+                                 <!-- <a href="#" class="common_btn"><span>DISCOVER MORE</span></a> -->
+                                </div>
                         </li>
                     </ul><!-- END SLIDES LIST -->
                 </div>
@@ -234,13 +224,13 @@
         <!-- Revolution Slider -->
 
         <!-- Services Section -->
-        <section class="service_section commonSection">
+        <section id='but_why' class="service_section commonSection">
             <div class="container">
                 <div class="row">
                     
                     <div class="col-lg-12 text-center">
-                        <h5 class="sec_title white">Fake news is being fuelled by the top and bottom of society
-                            <br> which needs to be solved immediately.</h5>
+                        <h5 class="sec_title white">Fake news is being fuelled by the top and bottom of society, and
+                            <br> it needs to be solved immediately.</h5>
                         <p class="sec_desc color_aaa">
                             We are committed to providing our user with expectional process to tackle fake news.
                         </p>
@@ -252,13 +242,13 @@
                             <div class="flipper">
                                 <div class="front">
                                     <i class="mei-web-design"></i>
-                                    <h3>Education</h3>
+                                    <h1>Education</h1>
                                 </div>
                                 <div class="back">
                                     <p>Over the last few years, fake news has become an everyday expression.
                                         Since 2019, the COVID-19 pandemic has dominated the media, both domestically and abroad.
-                                        Alongside increased attention on the pandemic has virally spread fake news related to COVID-19.According
-                                        to the World Health Organisation,the world is notjust fighting a viral pandemic –but also an “Infodemic”. 
+                                        Alongside increased attention on the pandemic has virally spread fake news related to COVID-19. According
+                                        to the World Health Organisation,the world is not just fighting a viral pandemic –but also an “Infodemic”. 
                                         <strong>At clarifact,</strong> We want our readers to understand the difference 
                                         between Fake or real News.
                                     </p>
@@ -271,11 +261,14 @@
                             <div class="flipper">
                                 <div class="front">
                                     <i class="mei-computer-graphic"></i>
-                                    <h3>Quiz</h3>
+                                    <h1>Quiz</h1>
                                 </div>
                                 <div class="back">
-                                    <i class="mei-computer-graphic"></i>
-                                    <h3>Section</h3>
+                                    <p>
+                                        Take a test and see where you stand when it comes to realising whether the news is fake or not!
+                                         You’ll be given a piece of news, its respective source, author and date. 
+                                         All you have to do is tell if the given news is fake or not.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -335,9 +328,12 @@
                         <h4 class="sub_title" style='color:red'>Our long-term vision</h4>
                         <h2 class="sec_title MB_45">Why do we need to detect fake news?</h2>
                         <p class="sec_desc">
-                            We are committed to providing our customers with exceptional service while offering our employees the best training. 
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the
-                            industry's standard dummy text ever since the 1500s.
+                            Let’s start with an example. In the initial stages of Covid19 Virus, there were suggestions coming 
+                            up on social media that the virus can be cured with cocaine. Consuming such a harmful drug is no better 
+                            than the virus itself. Thus, it was prominent to stop such news from spreading at the earliest point.
+                            <br>
+                            To save the innocent people who might get affected by the consequences of fake news, our product puts prime 
+                            focus on the detection of fake news.
                         </p>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-md-6">
@@ -351,7 +347,7 @@
         </section>
         <!-- About Agency Section -->
         <!-- What We Do Section -->
-        <section class="commonSection what_wedo">
+        <!-- <section class="commonSection what_wedo">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -375,16 +371,16 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
         <!-- What We Do Section -->
 
         <!-- Portfolio Section -->
-        <section class="commonSection porfolio">
+        <section id = 'consequences' class="commonSection porfolio">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         
-                        <h2 class="sec_title">Consequence of fake news</h2>
+                        <h2 class="sec_title">Consequences of fake news</h2>
                         <p class="sec_desc">
                             Fake news causes a range of harms to individuals and to society
                         </p>
@@ -405,13 +401,13 @@
                     </div>
                     <div class="col-lg-4 col-sm-6 col-md-4">
                         <div class="singlefolio">
-                            <img src=" {% static 'images/portfolio/announcement.png' %} " alt=""/>
+                            <img src=" {% static 'images/portfolio/social_disruption.png' %} " alt=""/>
                             <div class="folioHover">
                                 <h2>Public panic and social disruption</h2>
                                 <p>Fake news may cause 
                                     unrest or panic amongst a group of people or society more broadly. 
-                                    This may threaten the operation of public services and lead to 
-                                    harms to public or private property</p>
+                                    This may threaten the operation of public services and may
+                                    harm public or private property</p>
                             </div>
                         </div>
                     </div>
@@ -473,39 +469,44 @@
         <section class="commonSection funfact">
             <div class="container">
                 <div class="row">
-                    <h2 class="sec_title" style='color:#fff;padding: 36px 0 0; margin:0;'>Australia Fake news stats</h2>
+                    <h3 style="color:#fff"class="sec_title">Australia Fake news stats</h3>
                 
                     <div class="col-lg-3 col-sm-6 col-md-3 noPadding BR">
                         <div class="singlefunfact text-center">
-                            <h1 data-counter="48" class="timer"><span class="countSpan">8</span>48</h1>
-                            <p>percent of Australians rely on online news or social media as their main source
+                            <span data-counter="48" class="timer"><span class="countSpan">48</span></span>
+                            <span class="timer">%</span>
+                            <p> of Australians rely on online news or social media as their main source
                                  of news</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-md-3 noPadding BR">
                         <div class="singlefunfact text-center">
-                            <h1 data-counter="64" class="timer"><span class="countSpan"></span>64</h1>
-                            <p> percent of Australians remain concerned about what is real or fake on the 
+                            <span data-counter="64" class="timer">64</span>
+                            <span class="timer">%</span>
+                            <p>  of Australians remain concerned about what is real or fake on the 
                                 internet.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-md-3 noPadding BR">
                         <div class="singlefunfact text-center">
-                            <h1 data-counter="70" class="timer"><span class="countSpan"></span>70%</h1>
-                            <p> percent of increase in the number of heavy news during the COVID-19 pandemic
+                            <span data-counter="70" class="timer"><span class="countSpan"></span>70</span>
+                            <span class="timer">%</span>
+                            <p>  of increase in the number of heavy news during the COVID-19 pandemic
                                 During the COVID-19 pandemic. 
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 col-md-3 noPadding">
                         <div class="singlefunfact text-center">
-                            <h1 data-counter="36" class="timer"><span class="countSpan">9</span>36</h1>
-                            <p>precent of the Australians are most concerned about false information on Facebook
+                            <span data-counter="36" class="timer"><span class="countSpan">9</span>36</span>
+                            <span class="timer">%</span>
+                            <p> of the Australians are most concerned about false information on Facebook
                                 </p> </div>
                     </div>
-                    <h2  style='color:#fff;padding: 36px 0 0; margin:0;'>
-                        A study conducted by DIGITAL NEWS REPORT:AUSTRALIA 2020</h2>
+                    
                 </div>
+                <h4  style='color:#fff;padding: 36px 0 0; margin:0;'>
+                    A study conducted by DIGITAL NEWS REPORT:AUSTRALIA 2020</h4>
             </div>
         </section>
         <!-- FunFact Section -->
@@ -513,7 +514,7 @@
     
 
         <!-- Team Section -->
-        <section class="commonSection team">
+        <!-- <section class="commonSection team">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -612,11 +613,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Team Section -->
 
         <!-- Client Section -->
-        <section class="commonSection client">
+        <!-- <section class="commonSection client">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -674,12 +675,12 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Client Section -->
 
 
         <!-- Blog Section -->
-        <section class="commonSection blog">
+        <!-- <section class="commonSection blog">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -730,7 +731,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Blog Section -->
 
 
