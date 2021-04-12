@@ -1,0 +1,576 @@
+{% extends "page/header.html" %}
+
+{% load static %}
+
+    {% block content %}
+        <!-- Preloading -->
+       
+        <!-- Preloading -->
+        {% include 'page/preloader.html' %}
+        <!-- Header 01 -->
+        {% include 'page/section_nav_bar.html' %}
+        <!-- Header 01 -->
+
+        <!-- Search From -->
+        <div class="searchFixed popupBG">
+            <div class="container-fluid">
+                <a href=" {% static '' %} " id="sfCloser" class="sfCloser"></a>
+                <div class="searchForms">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <form method="post" action="#">
+                                    <input type="text" name="s" class="searchField" placeholder="Search here..."/>
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search From -->
+
+        <!-- PopUP Menu -->
+        <div class="popup popup__menu">
+            <a href=" {% static '' %} " id="close-popup" class="close-popup"></a>
+            <div class="container mobileContainer">
+                <div class="row">
+                    <div class="col-lg-12 text-left">
+                        <div class="logo2">
+                            <a href=" {% static 'index.html' %} "><img src=" {% static 'images/logo.png' %} " alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="popup-inner">
+                            <div class="dl-menu__wrap dl-menuwrapper">
+                                <ul class="dl-menu dl-menuopen">
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">home</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'index.html' %} ">Home 01</a></li>
+                                            <li><a href=" {% static 'index2.html' %} ">Home 02</a></li>
+                                            <li><a href=" {% static 'index3.html' %} ">Home 03</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href=" {% static 'about.html' %} ">About</a></li>
+                                    <li class="menu-item-has-children"><a href=" {% static 'javascript:void(0);' %} ">services</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'services.html' %} ">Service</a></li>
+                                            <li><a href=" {% static 'service_detail.html' %} ">Service Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">Portfolio</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'portfolio.html' %} ">Portfolio v1</a></li>
+                                            <li><a href=" {% static 'portfolio2.html' %} ">Portfolio v2</a></li>
+                                            <li><a href=" {% static 'portfolio_detail.html' %} ">Portfolio Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href=" {% static 'javascript:void(0);' %} ">Blog</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href=" {% static 'blog.html' %} ">Blog v1</a></li>
+                                            <li><a href=" {% static 'blog2.html' %} ">Blog v2</a></li>
+                                            <li><a href=" {% static 'blog3.html' %} ">Blog v3</a></li>
+                                            <li><a href=" {% static 'blog_single.html' %} ">Blog Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href=" {% static 'contact.html' %} ">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+                        <ul class="footer__contacts text-left">
+                            <li>Phone: 666 888 000</li>
+                            <li>Email: needhelp@meipaly.com</li>
+                            <li>Address: 66 Broklyn Street, New York United States of America</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-12 col-xs-12">
+                        <div class="popUp_social text-right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
+                                <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PopUP Menu -->
+
+        <!-- Page Banner -->
+        <!-- <section class="pageBanner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner_content text-center">
+                            
+                            <h1 class='expert'>Ask the Expert</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Page Banner -->
+
+        <!-- Agency Section -->
+        <section class="commonSection why_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        
+                        <h2 class="sec_title">Why we need Expert?</h2>
+                        <p class='description'>Every day we are bombarded by a lot of information from various sources such as newspapers, social media, etc. Apparently, we do not have expertise in every field. So, supplement your research with an expert advice from those who know the best. Ask questions that have not been answered. Seek knowledge from trustworthy organisations and respective intellectuals.
+                            Moreover, if a story feels flimsy or does not seem to be properly cited.
+                            </p>
+                        <h3 style="color:#a13f3f">That’s where we need opinions from respective experts in the field!</h3>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        <div class="">
+                            <img src=" {% static 'images/about/1.jpg' %} " alt=""/>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-12 col-sm-12">
+                        <div class="agency_img2">
+                            <img src=" {% static 'images/about/2.jpg' %} " alt=""/>
+                        </div>
+ 
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- Agency Section -->
+                <!-- Why Choose Section -->
+                <section  class="commonSection chooseUs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                
+                                <h2 class="sec_title">Who are the Experts?</h2>
+                                <p class="sec_desc">
+                                    
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <form action="/your-name/" method="post">
+                            <label for="your_name">Your name: </label>
+                            <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+                            <input type="submit" value="OK">
+                        </form> -->
+                        
+                        <form action="/author/" method="post">
+                            {% csrf_token %}
+                            <div class="wrap">
+                                <div class="search">
+                                <!-- <input 
+                                        type="text" 
+                                        id ='author_name' 
+                                        name ='author' 
+                                        class="searchTerm" 
+                                        placeholder="search author...",
+                                        maxlength="100" required> -->
+                                        {{form}}
+                                        
+                                <button type="submit" class="searchButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="tabs">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="chooseUs_title">
+                                        <li><a href="#tes_tab_1 " data-toggle="tab">Professionals</a></li>
+                                        <li class="active"><a href="#tes_tab_2" data-toggle="tab">Organizations</a></li>
+                                        <!-- <li><a href="#tes_tab_3" data-toggle="tab">International organizations</a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="tab-content clearfix">
+                                    <div class="tab-pane fade" id="tes_tab_1">
+                                        <div class="col-lg-7 col-sm-7 col-md-7">
+                                            <div class="wh_choose">
+                                                <p>
+                                                    Someone having comprehensive or authoritative knowledge in a particular area is considered an expert. 
+                                                </p>
+                                                <ul>
+                                                    <li><i class="fa fa-plus-square"></i><strong>Health: </strong> Doctor & Medical practitioners</li>
+                                                    <li><i class="fa fa-briefcase" aria-hidden="true"></i><strong>Business: </strong>  Consultants & Businessman</li>
+                                                    <li><i class="fa fa-flask" aria-hidden="true"></i><strong>Technology & Science: </strong> Engineers & Scientist</li>
+                                                    <li><i class="fa fa-trophy" aria-hidden="true"></i><strong>Sports: </strong>Athletes & Coaches </li>
+                                                    <li><i class="fa fa-book" aria-hidden="true"></i><strong>Education: </strong>Consultants, Lectures, Students & Scientist </li>
+                                                    <li><i class="fa fa-plane" aria-hidden="true"></i><strong>Travel & Food: </strong>Famous Bloggers & Consultants </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-sm-5 col-md-5">
+                                            <div class="chose_img">
+                                                <img src=" {% static 'images/home_1/c1.jpg' %} " alt=""/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade in active" id="tes_tab_2">
+                                        <div class="col-lg-5 col-sm-5 col-md-5">
+                                            <div class="chose_img">
+                                                <img src=" {% static 'images/home_1/c2.jpg' %} " alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-sm-7 col-md-7">
+                                            <div class="wh_choose">
+                                                <p>
+                                                    Someone having comprehensive or authoritative knowledge in a particular area is considered an expert. 
+                                                </p>
+                                                <ul>
+                                                    <li><i class="fa fa-plus-square"></i><strong>Health: </strong>World Health Organisation & health.VIC</li>
+                                                    <li><i class="fa fa-briefcase" aria-hidden="true"></i><strong>Business: </strong>World Trade Organisation </li>
+                                                    <li><i class="fa fa-flask" aria-hidden="true"></i><strong>Technology & Science: </strong>International Organization for Science and Technology Education  </li>
+                                                    <li><i class="fa fa-trophy" aria-hidden="true"></i><strong>Sports: </strong> International Sports Organisation</li>
+                                                    <li><i class="fa fa-book" aria-hidden="true"></i><strong>Education: </strong>UNESCO & International Education Association of Australia</li>
+                                                    <li><i class="fa fa-plane" aria-hidden="true"></i><strong>Travel & Food: </strong>World FoodTravel Association </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="tab-pane fade" id="tes_tab_3">
+                                        <div class="col-lg-7 col-sm-7 col-md-7">
+                                            <div class="wh_choose">
+                                                <p>
+                                                    International organizations have expertise in their own field and provides accurate information.
+                                                     They are consistent with other experts and trusted organizations.
+                                                </p>
+                                                <ul>
+                                                    <li><i class="fa fa-plus-square"></i><strong>Health:</strong> Doctor and medical practitioners</li>
+                                                    <li><i class="fa fa-briefcase" aria-hidden="true"></i><strong>Business:</strong> </li>
+                                                    <li><i class="fa fa-flask" aria-hidden="true"></i><strong>Technology & Science:</strong> </li>
+                                                    <li><i class="fa fa-trophy" aria-hidden="true"></i><strong>Sports:</strong> </li>
+                                                    <li><i class="fa fa-book" aria-hidden="true"></i><strong>Education:</strong> </li>
+                                                    <li><i class="fa fa-plane" aria-hidden="true"></i><strong>Travel & Food:</strong> </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-sm-5 col-md-5">
+                                            <div class="chose_img">
+                                                <img src=" {% static 'images/home_1/c3.jpg' %} " alt=""/>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Why Choose Section -->
+
+        <!-- Testimonial 2 Section -->
+        <section class="commonSection testimonial_2">
+            <div class="container">
+                <div class="row">
+                    <div id="tabs" class="testimoniTab">
+                        <div class="col-lg-5 col-sm-5">
+                            <h4 class="sub_title color_aaa">our testimonials</h4>
+                            <h2 class="sec_title white">happy customers</h2>
+                            <ul class="slider_testimoial">
+                                <li class="active control_item">
+                                    <a href=" {% static '#tab_1' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t1.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Shirley Smith</h5>
+                                            <h6>Director</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_2' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t2.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike hardson</h5>
+                                            <h6>co founder</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_3' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t3.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike Smith</h5>
+                                            <h6>manager</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_4' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t1.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Shirley Smith</h5>
+                                            <h6>Director</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_5' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t2.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike hardson</h5>
+                                            <h6>manager</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="control_item">
+                                    <a href=" {% static '#tab_6' %} " data-toggle="tab">
+                                        <span><img src=" {% static 'images/home_1/t3.jpg' %} " alt=""/></span>
+                                        <div class="author_detail">
+                                            <h5>Mike Smith</h5>
+                                            <h6>manager</h6>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-7 col-sm-7">
+                            <div class="dots_owl"></div>
+                            <div class="tab-content clearfix">
+                                <div class="tab-pane fade in active testi_con" id="tab_1">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>25 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_2">
+                                    <p>
+                                        “It’s throughly refresing to get such a personal touch. There are many variations of passages of available,
+                                        This is due to their excellent service, competitive pricing and customer support. 
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>26 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_3">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>27 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_4">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>28 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_5">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>29 nov, 2018</span>
+                                </div>
+                                <div class="tab-pane fade testi_con" id="tab_6">
+                                    <p>
+                                        “This is due to their excellent service, competitive pricing and customer support. It’s throughly 
+                                        refresing to get such a personal touch. There are many variations of passages of available,
+                                        but the majority have suffered alteration in some form by injected hum
+                                    </p>
+                                    <span>30 nov, 2018</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonial 2 Section -->
+
+        <!-- Subscribe Section -->
+        <!-- <section class="commonSection subscribe">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-5 col-md-4">
+                        <h4 class="sub_title">don’t miss out our latest updates</h4>
+                        <h2 class="sec_title">Subscribe us</h2>
+                    </div>
+                    <div class="col-lg-8 col-sm-7 col-md-8">
+                        <form action="" method="post" class="subscribefrom">
+                            <input type="email" placeholder="Enter your email" name="email">
+                            <button class="common_btn red_bg" type="submit" name="submit"><span>Subscribe now</span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Subscribe Section -->
+
+        <!-- Team Section -->
+        <section class="commonSection team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h4 class="sub_title">meet the team</h4>
+                        <h2 class="sec_title">expert people</h2>
+                        <p class="sec_desc">
+                            We are committed to providing our customers with exceptional service while<br> offering our employees the best training.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="team_slider">
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/1.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>kevin smith</h5>
+                        <h6>co founder</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/2.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>Jessica Brown</h5>
+                        <h6>General Manager</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/3.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>Mike Hardson</h5>
+                        <h6>Senior Designer</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/4.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>Rose Ford</h5>
+                        <h6>Marketing manager</h6>
+                    </div>
+                </div>
+                <div class="singleTM">
+                    <div class="tm_img">
+                        <img src=" {% static 'images/team/5.jpg' %} " alt="">
+                        <div class="tm_overlay">
+                            <div class="team_social">
+                                <a href="#"><span>Facebook</span></a>
+                                <a href="#"><span>Twitter</span></a>
+                                <a href="#"><span>Youtube</span></a>
+                            </div>
+                            <a href="#" class="common_btn"><span>learn more</span></a>
+                        </div>
+                    </div>
+                    <div class="detail_TM">
+                        <h5>John Albert</h5>
+                        <h6>Brand Officer</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Team Section -->
+
+        <!-- Our Work Section -->
+        <section class="commonSection our_work">
+            <div class="videoWrap_2">
+                <img src=" {% static 'images/about/3.jpg' %} " alt="">
+                <div class="play_video">
+                    <a class="video_popup" href="https://www.youtube.com/watch?v=A7ZkZazfvao"><i class="fa fa-play"></i></a>
+                    <h2>Watch Video</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="ab_detail_wrap">
+                            <h4 class="sub_title">the only design you need</h4>
+                            <h2 class="sec_title">Make amazing websites without touching cod</h2>
+                            <p class="sec_desc">
+                                Tincidunt elit magnis nulla facilisis sagittis maecenas. Sapien nunc amet ultrices, 
+                                dolores sit ipsum velit purus aliquet, massa fringilla leo orci. Lorem ipsum
+                                dolors sit amet elit magnis amet ultrices purus aliquet.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Our Work Section -->
+
+
+
+        <!-- Ready Section -->
+        <!-- <section class="commonSection ready">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-sm-8 col-md-9">
+                        <h2 class="sec_title white">Let's Get Your Project Started!</h2>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-md-3 text-right">
+                        <a class="common_btn" href=" {% static 'contact.html' %} "><span>Contact with us</span></a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Ready Section -->
+
+        <!-- Footer Section -->
+        
+        {% include 'page/footer.html' %}
+        <!-- Footer Section -->
+
+        <!-- Bact To To -->
+        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
+        <!-- Bact To To -->
+
+{% endblock %}
