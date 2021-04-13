@@ -1,0 +1,19 @@
+<form action="/fake_news_detector/" method="post">
+    {% csrf_token %}
+    <div class="wrap">
+        <div class="search">
+        <!-- <input 
+                type="text" 
+                id ='author_name' 
+                name ='author' 
+                class="searchTerm" 
+                placeholder="search author...",
+                maxlength="100" required> -->
+                {{form}}
+                
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+        </div>
+    </div>
+</form>

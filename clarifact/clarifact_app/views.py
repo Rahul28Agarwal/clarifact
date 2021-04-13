@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from clarifact_app.form import author_form
+from clarifact_app.form import fake_news_form
 from django.http import HttpResponse
 from django.shortcuts import redirect
-
+from pickle import load
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 def index(request):
     return render(request,'page/index.html')
@@ -34,21 +36,21 @@ def author(response):
 
     return render(response, 'page/author.html', {'form':form})
 
-def get_name(request):
-    # if this is a POST request we need to process the form data
-    if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = author_form(request.POST)
-        # check whether it's valid:
-        if form.is_valid():
-            # print(form)
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+def fake_news(response):
+    model = load(open('model.pkl', 'rb'))
+    vec = load(open('transformation.pkl', 'rb'))
 
-    # if a GET (or any other method) we'll create a blank form
+    if response.method == 'POST':
+        newsform = fake_news_form(response.POST)
+        if newsform.is_valid():
+            text = newsform.cleaned_data['news_text']
+            vec_result = vec.transform([text])
+            result = model.predict(vec_result)[0]
+            print(result)
+            return render(response, 'page/result.html',{'ans':result})
     else:
-        form = author_form()
+        newsform = fake_news_form()
 
-    return render(request, 'name.html', {'form': form})
+    
+
+    return render(response, 'page/fake_news.html', {'form':newsform,})
