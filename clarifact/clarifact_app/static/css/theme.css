@@ -2350,7 +2350,7 @@
     font-weight: 700;
     display: block;
     height: 31px;
-    width: 65px;
+    width: 107px;
     background: #e62b4a;
     color: #ffffff;
     padding: 11px 0;
@@ -2416,7 +2416,7 @@
 }
 .post_author{
     position: relative;
-    background: #f4f4f4;
+    background: #fff;
     padding: 57px 70px 60px 270px;
     margin-bottom: 60px;
 }
