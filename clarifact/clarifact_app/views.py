@@ -5,7 +5,6 @@ from clarifact_app.form import fake_news_form
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from pickle import load
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 def index(request):
     return render(request,'page/index.html')
@@ -39,16 +38,19 @@ def author(response):
 def fake_news(response):
     model = load(open('model.pkl', 'rb'))
     vec = load(open('transformation.pkl', 'rb'))
-
+    
     if response.method == 'POST':
         newsform = fake_news_form(response.POST)
+        
         if newsform.is_valid():
+            
             text = newsform.cleaned_data['news_text']
             vec_result = vec.transform([text])
             result = model.predict(vec_result)[0]
             print(result)
-            return render(response, 'page/result.html',{'ans':result})
+            return render(response, 'page/fake_news.html',{'form':newsform, 'ans':result})
     else:
+        
         newsform = fake_news_form()
 
     
