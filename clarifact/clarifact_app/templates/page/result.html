@@ -1,2 +1,58 @@
+{% extends "page/header.html" %}
 
-The result is {{ans}}
+{% load static %}
+
+    {% block content %}
+        <!-- Preloading -->
+       
+        <!-- Preloading -->
+        {% include 'page/preloader.html' %}
+        <!-- Header 01 -->
+        {% include 'page/section_nav_bar.html' %}
+
+<section class="commonSection blogDetails">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-sm-10">
+                <div class="single_blog">
+                    <div class="blog_thumb">
+                        <img src="images/blog/7.jpg" alt=""/>
+                    </div>
+                    <div class="blog_headings">
+                        
+                        <h2>{{title}}</h2>
+                        {% if date %}
+                            <span class="blog_date">{{date}}</span>
+                        {% endif %}
+                        
+                    </div>
+                    <div class="blog_details">
+                        <p style='text-align: justify'>
+                            {{text}}
+                        </p>
+                    </div>
+                    <div class="post_author">
+                        {% if ans == 'Fake' %}
+                            <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
+                        {% elif ans == 'Real' %}
+                        <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
+                        {% endif %}
+                        <h1>{{ans}}</h1>
+                        
+                    </div>
+                  
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+{% include 'page/footer.html' %}
+<!-- Footer Section -->
+
+<!-- Bact To To -->
+<a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
+<!-- Bact To To -->
+
+{% endblock %}
