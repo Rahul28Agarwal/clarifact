@@ -9,5 +9,6 @@ urlpatterns = [
     path('read_beyond/', views.read_beyond, name='read_beyond'),
     path('solution/', views.solution, name='solution'),
     path('author/', views.author, name='author'),
-    path('fake_news_detector/', views.fake_news, name='fake_news')
+    path('fake_news_detector/', views.fake_news, name='fake_news'),
+    path('source/', views.source, name = 'source')
 ]
