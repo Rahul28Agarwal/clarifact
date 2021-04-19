@@ -1,9 +1,16 @@
 from django import forms
 
+
+class source_form(forms.Form):
+    source = forms.CharField(label='',
+                                max_length=100, 
+                                widget=forms.TextInput(attrs={'class' : 'searchTerm','placeholder': 'Search Source...'}))
+
 class author_form(forms.Form):
     author = forms.CharField(label='',
                                 max_length=100, 
                                 widget=forms.TextInput(attrs={'class' : 'searchTerm','placeholder': 'Search Author...'}))
+
 
 
 class fake_news_form(forms.Form):
