@@ -1889,6 +1889,10 @@
     background: #e62b4a;
 }
 
+.author_p{
+    font-size: 29px;
+}
+
 /*----------------------------------------------------
 / 21. About Page
 ------------------------------------------------------*/
@@ -1896,6 +1900,21 @@
     position: relative;
     min-height: 465px;
     background: url(../images/bg/detect_fake.png) no-repeat center center / cover;
+    padding-top: 224px;
+}
+.authopageBanner {
+    position: relative;
+    min-height: 465px;
+    background: url(../images/bg/author_banner.png) no-repeat center center / cover;
+    padding-top: 224px;
+}
+.news_author img{
+    width:100%;
+}
+.author_ques_pageBanner {
+    position: relative;
+    min-height: 885px;
+    background: url(../images/bg/wondering.png) no-repeat center center / cover;
     padding-top: 224px;
 }
 .banner_content{
