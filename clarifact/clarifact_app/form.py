@@ -1,5 +1,5 @@
 from django import forms
-
+import datetime
 
 class source_form(forms.Form):
     source = forms.CharField(label='',
@@ -30,11 +30,7 @@ class fake_news_form(forms.Form):
                                                               'class':'input-form',
                                                               'id':'author'}),
                                                               required=True)
-    news_date = forms.CharField(label='',
-                                 widget=forms.TextInput(attrs={'placeholder':'Enter the Date of News',
-                                                              'class':'input-form',
-                                                              'id':'date'}),
-                                                              required=True)
+    news_date =  forms.DateField(label='What is your birth date?', widget=forms.SelectDateWidget(attrs={'class':'data_input_form'}))
 
 
 

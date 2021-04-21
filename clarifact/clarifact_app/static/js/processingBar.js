@@ -73,7 +73,8 @@ $(".previous").click(function () {
         current_fs.css({ left: left });
         previous_fs.css({
           transform: "scale(" + scale + ")",
-          opacity: opacity
+          opacity: opacity,
+          position: "absolute"
         });
       },
       duration: 800,

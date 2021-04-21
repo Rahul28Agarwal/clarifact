@@ -737,6 +737,7 @@
 .singlefunfact{
     position: relative;
     padding-top: 113px;
+    padding-right: 10px
 }
 /* .singlefunfact h1{
     font-size: 60px;
@@ -2370,7 +2371,7 @@
     font-weight: 700;
     display: block;
     height: 31px;
-    width: 65px;
+    width: 105px;
     background: #e62b4a;
     color: #ffffff;
     padding: 11px 0;
@@ -2597,6 +2598,29 @@
     margin: 0 0 30px;
     outline: none;
     border-radius: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.data_input_form {
+    width: 25%;
+    height: 70px;
+    background: #f4f4f4;
+    border: none;
+    text-align: left;
+    
+    font-size: 14px;
+    letter-spacing: 0.56px;
+    line-height: 70px;
+    color: #818181;
+    margin: 0 0 30px;
+    outline: none;
+    border-radius: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    letter-spacing: 0.56px;
+    line-height: 70px;
+    color: #818181;
+    border: 1px solid #fff;
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
 }
