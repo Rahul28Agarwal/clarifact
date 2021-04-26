@@ -10,5 +10,5 @@ urlpatterns = [
     path('solution/', views.solution, name='solution'),
     path('author/', views.author, name='author'),
     path('fake_news_detector/', views.fake_news, name='fake_news'),
-    path('source/', views.source, name = 'source')
+    path('source/', views.source_view, name = 'source')
 ]

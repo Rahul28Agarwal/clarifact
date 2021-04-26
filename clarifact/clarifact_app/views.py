@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from pickle import NONE, load
 import datetime
+from .models import source
 
 def index(request):
     return render(request,'page/index.html')
@@ -20,22 +21,27 @@ def read_beyond(request):
 def solution(request):
     return render(request, 'page/solution.html')
 
-def source(response):
+def source_view(response):
     if response.method == 'POST':
         form = source_form(response.POST)
+        is_reliable = False
         if form.is_valid():
-            source = form.cleaned_data['source']
-            # source_info = source.split(' ')
-            # if(len(source_info) == 2):
-            #     url = 'https://au.linkedin.com/pub/dir?firstName='+source_info[0]+'&lastName='+source_info[1]+'&trk=people-guest_people-search-bar_search-submit'
-            # elif(len(source_info) == 1):
-            #     url = 'https://www.linkedin.com/pub/dir?firstName='+source_info[0]+'&lastName=&trk=public_profile_people-search-bar_search-submit'
-            # return redirect(url)
+            source_name = form.cleaned_data['source']
+            t = source.objects
+            if t.filter(name= source_name.lower()):
+                is_reliable = True
+            else:
+                is_reliable = False
+
+        return render(response, 'page/source.html', {'form':form, "is_reliable":is_reliable})
+            # if source.objects.get(name='abc new'):
+            #     print('exist')
+            # else:
+            #     print('not exist')
+            
     else:
         form = source_form()
-
-
-    return render(response, 'page/source.html', {'form':form})
+        return render(response, 'page/source.html', {'form':form})
 
 def author(response):
     if response.method == 'POST':
