@@ -5,7 +5,8 @@ from clarifact_app.form import source_form
 from clarifact_app.form import fake_news_form
 from django.http import HttpResponse
 from django.shortcuts import redirect
-from pickle import load
+from pickle import NONE, load
+import datetime
 
 def index(request):
     return render(request,'page/index.html')
@@ -66,9 +67,13 @@ def fake_news(response):
             title = newsform.cleaned_data['news_title']
             date = newsform.cleaned_data['news_date']
             author = newsform.cleaned_data['news_author']
+            print(type(date))
+            if(date == datetime.date(1900, 1, 1)):
+                date = None
+            print(date)
             vec_result = vec.transform([text])
             result = model.predict(vec_result)[0]
-            print(result)
+            
             return render(response, 'page/result.html',{'text':text,
                                                          'ans':result,
                                                          'autho':author,

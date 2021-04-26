@@ -38,12 +38,12 @@
 / 1. Header 01
 ------------------------------------------------------*/
 .header_01{
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 5;
-    background: transparent;
+    background-image: linear-gradient(90deg,#f5f2ff,#cec4c5);
     padding: 28px 26px 0 32px;
     border-bottom: 2px solid rgba(255, 255, 255, .10);
 }
@@ -290,14 +290,14 @@
     font-size: 24px;
     line-height: .8;
     color: #000000;
-    font-family: "fontAwesome";
+    font-family: sans-serif;
 }
 .rev_slider .tparrows.tp-leftarrow:before{
     content:"\f104";
     font-size: 24px;
     line-height: .8;
     color: #000000;
-    font-family: "fontAwesome";
+    font-family: sans-serif;
 }
 .rev_slider .tp-leftarrow.me_arrows:hover,
 .rev_slider .tp-rightarrow.me_arrows:hover{
@@ -334,16 +334,7 @@
     position: relative;
     width: 100%;
     background: transparent;
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    -ms-perspective: 1000;
-    perspective: 1000;
-    -ms-transform: perspective(1000px);
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transition: all ease 400ms;
-    -webkit-transition: all ease 400ms;
-    -moz-transition: all ease 400ms;
+
 }
 .icon_box_1 .back i,
 .icon_box_1 .front i {
@@ -352,115 +343,44 @@
     color: #aaaaaa;
     display: block;
     margin-bottom: 17px;
-    transition: all ease 400ms;
-    -moz-transition: all ease 400ms;
-    -webkit-transition: all ease 400ms;
+
 }
 .icon_box_1 .back p,.icon_box_1 .front p {
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
     /* text-transform: uppercase; */
-    color: #aaaaaa;
+    color: #FFF;
     margin: 0;
-    transition: all ease 400ms;
-    -moz-transition: all ease 400ms;
-    -webkit-transition: all ease 400ms;
+ 
 }
-.icon_box_1 .back h1,
-.icon_box_1 .front h1 {
+.icon_box_1 .back h2,
+.icon_box_1 .front h2 {
     
     line-height: 20px;
     font-weight: 400;
     text-transform: uppercase;
-    color: #aaaaaa;
+    color: #FFF;
     margin: 0;
-    transition: all ease 400ms;
-    -moz-transition: all ease 400ms;
-    -webkit-transition: all ease 400ms;
+    
 }
-.icon_box_1 .flipper {
-    -webkit-transform-origin: 100% 213.5px;
-    -moz-transform-origin: 100% 213.5px;
-    -ms-transform-origin: 100% 213.5px;
-    transform-origin: 100% 213.5px;
-}
-.flipper {
-    -webkit-transition: 0.6s;
-    -webkit-transform-style: preserve-3d;
-    -ms-transition: 0.6s;
-    -moz-transition: 0.6s;
-    -moz-transform: perspective(1000px);
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-.front, .back {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transition: 0.6s;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: rotateY(0deg);
-    -moz-transition: 0.6s;
-    -moz-transform-style: preserve-3d;
-    -moz-transform: rotateY(0deg);
-    -o-transition: 0.6s;
-    -o-transform-style: preserve-3d;
-    -o-transform: rotateY(0deg);
-    -ms-transition: 0.6s;
-    -ms-transform-style: preserve-3d;
-    -ms-transform: rotateY(0deg);
-    transition: 0.6s;
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
+
+
 .front {
-    -webkit-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    background: transparent;
+
+    /* background: #49988a; */
+    background-image: linear-gradient(90deg,#d1641a,#c0282a);
+    /* background-image: linear-gradient(90deg,#d1641a,#c0282a) */
     z-index: 2;
     border: 2px solid #fff;
     padding: 48px 45px 45px;
     width: 100%;
 }
-.vertical .back {
-    -webkit-transform: rotateX(180deg);
-    -moz-transform: rotateX(180deg);
-    -ms-transform: rotateX(180deg);
-    transform: rotateX(180deg);
-}
-.back {
-    background: #e62b4a;
-    -webkit-transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
-    -ms-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    position: relative;
-    padding: 48px 45px 45px;
-    border: 2px solid #e62b4a;
-    width: 100%;
-}
-.icon_box_1:hover .front, .icon_box_1.hover .front {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-}
-.icon_box_1:hover .back, .icon_box_1.hover .back {
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    -o-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-}
+
+
+
+
 .custom_column .col-lg-3{
     width: 20%;
 }
@@ -754,6 +674,7 @@
     font-weight: 300;
     color: #fff;
     margin: 0 0 25px;
+    background: transparent;
 }
 .singlefunfact h3{
     text-transform: uppercase;
@@ -3205,7 +3126,7 @@ textarea.input-form:focus{
     top: 2px;
     content: "\f107";
     transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);
-    font-family: 'fontAwesome';
+    font-family: sans-serif;
     font-size: 12px;
     color: #fff;
     line-height: .8;
@@ -3454,3 +3375,52 @@ textarea.input-form:focus{
 .color_settings .switch-btn:hover{
     color: #e62b4a;
 }
+
+/*----------------------------------------------------
+/ 31. solution page
+------------------------------------------------------*/
+.sec_title_line{
+    font-family: Roboto;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 28px;
+    max-width: 595px;
+    position: relative;
+    }
+    .sec_title_line:before{
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    /* background: #000; */
+    background-image: linear-gradient(90deg,#d1641a,#c0282a);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+    }
+    .sec_title_line:after{
+    content: "";
+    display:block;
+    width: 120px;
+    height:2px;
+    background-image: linear-gradient(90deg,#d1641a,#c0282a);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -2;
+    }
+    /* span{
+    background: #fff
+    } */
+
+    .card{
+        font-family: Roboto;
+        margin: 0px;
+        text-align: left;
+        font: caption;
+        font-size: 28px;
+        max-width: 595px;
+        position: relative;
+        color: #000;
+    }

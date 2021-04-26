@@ -1,217 +1,69 @@
-{% extends "page/header.html" %}
 
 {% load static %}
 
-    {% block content %}
-        <!-- Preloading -->
-       
-        <!-- Preloading -->
-        {% include 'page/preloader.html' %}
-        <!-- Header 01 -->
-        {% include 'page/section_nav_bar.html' %}
-        <!-- Header 01 -->
 
-        <!-- Search From -->
-        <div class="searchFixed popupBG">
-            <div class="container-fluid">
-                <a href=" {% static '' %} " id="sfCloser" class="sfCloser"></a>
-                <div class="searchForms">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
-                                <form method="post" action="#">
-                                    <input type="text" name="s" class="searchField" placeholder="Search here..."/>
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Search From -->
-
-        <!-- PopUP Menu -->
-        <div class="popup popup__menu">
-            <a href=" {% static '' %} " id="close-popup" class="close-popup"></a>
-            <div class="container mobileContainer">
-                <div class="row">
-                    <div class="col-lg-12 text-left">
-                        <div class="logo2">
-                            <a href=" {% static 'index.html' %} "><img src=" {% static 'images/logo.png' %} " alt=""></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="popup-inner">
-                            <div class="dl-menu__wrap dl-menuwrapper">
-                                <ul class="dl-menu dl-menuopen">
-                                    <li class="menu-item-has-children">
-                                        <a href=" {% static 'javascript:void(0);' %} ">home</a>
-                                        <ul class="dl-submenu">
-                                            <li><a href=" {% static 'index.html' %} ">Home 01</a></li>
-                                            <li><a href=" {% static 'index2.html' %} ">Home 02</a></li>
-                                            <li><a href=" {% static 'index3.html' %} ">Home 03</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href=" {% static 'about.html' %} ">About</a></li>
-                                    <li class="menu-item-has-children"><a href=" {% static 'javascript:void(0);' %} ">services</a>
-                                        <ul class="dl-submenu">
-                                            <li><a href=" {% static 'services.html' %} ">Service</a></li>
-                                            <li><a href=" {% static 'service_detail.html' %} ">Service Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href=" {% static 'javascript:void(0);' %} ">Portfolio</a>
-                                        <ul class="dl-submenu">
-                                            <li><a href=" {% static 'portfolio.html' %} ">Portfolio v1</a></li>
-                                            <li><a href=" {% static 'portfolio2.html' %} ">Portfolio v2</a></li>
-                                            <li><a href=" {% static 'portfolio_detail.html' %} ">Portfolio Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href=" {% static 'javascript:void(0);' %} ">Blog</a>
-                                        <ul class="dl-submenu">
-                                            <li><a href=" {% static 'blog.html' %} ">Blog v1</a></li>
-                                            <li><a href=" {% static 'blog2.html' %} ">Blog v2</a></li>
-                                            <li><a href=" {% static 'blog3.html' %} ">Blog v3</a></li>
-                                            <li><a href=" {% static 'blog_single.html' %} ">Blog Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href=" {% static 'contact.html' %} ">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
-                        <ul class="footer__contacts text-left">
-                            <li>Phone: 666 888 000</li>
-                            <li>Email: needhelp@meipaly.com</li>
-                            <li>Address: 66 Broklyn Street, New York United States of America</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-xs-12 col-xs-12">
-                        <div class="popUp_social text-right">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                                <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- PopUP Menu -->
-
-        <!-- Page Banner -->
-        <!-- <section class="pageBanner">
+<fieldset class ='field_card'>
+    
+    <div class='card'>1. Consider the Source</div>
+   
+    </h2>
+           <!-- Featured Section -->
+           <section class="commonSection featured">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="banner_content text-center">
-                            
-                            <h1 class='expert'>Ask the Expert</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- Page Banner -->
-
-        <!-- Agency Section -->
-        <section class="commonSection why_section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-md-6">
-                        
-                        <h2 class="sec_title">Are you familiar with the source?<br>
-                            Is it legitimate?<br>
-                            Has it been reliable in the past?</h2>
-                        <p class='description'>If your answer is “No”, you may not want to trust it and don’t worry! We provide a url checker to help you check if the source is from widely respected media houses.
+                    <div class="col-lg-5 col-sm-12  col-md-5">
+                        <div class="features_content">
+                            <h4 class="sub_title" style="color: #a11818;font-size: 14px;">
+                                Trust the author before you trust the news!</h4>
+                            <h2 class="sec_title">About Author</h2>
+                            <p class="sec_desc">
+                                
                             </p>
-                    </div>
-                    <div class="col-lg-6 col-sm-6 col-md-6">
-                        <div class="">
-                            <img src=" {% static 'images/about/1.jpg' %} " alt=""/>
+                            <div class="singleFeature">
+                                <div class="f_count">01</div>
+                                
+                                <p>
+                                    Most of the fake news author's aren’t even journalists, but paid trolls
+                                    
+                                  
+                                </p>
+                            </div>
+                            <div class="singleFeature">
+                                <div class="f_count">02</div>
+                                
+                                <p>
+                                    Fake news articles often don't include author names. If included, check the author's bio and 
+                                    do a quick search on them.
+                                </p>
+                            </div>
+                            <div class="singleFeature">
+                                <div class="f_count">03</div>
+                                <p>
+                                    If they have advanced degrees or professional backgrounds that they are writing about,
+                                     they have met the minimum requirement for credibility
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-12 col-sm-12">
-                        <div class="agency_img2">
-                            <img src=" {% static 'images/about/2.jpg' %} " alt=""/>
+                    <!-- <div class="col-lg-7 col-sm-12 col-md-7 noPaddingRight">
+                        <div class="features_img">
+                            <img src="{% static 'images/bg/wondering.png' %}" alt=""/>
+                            
                         </div>
- 
                     </div> -->
                 </div>
             </div>
         </section>
-        <!-- Agency Section -->
-                <!-- Why Choose Section -->
-                <section  class="commonSection chooseUs">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                
-                                <h2 class="sec_title">Url checker</h2>
-                                <p>Simply insert the url into the URL Checker, and get an immediate credibility check !</p>
-
-                            </div>
-                        </div>
-                        <!-- <form action="/your-name/" method="post">
-                            <label for="your_name">Your name: </label>
-                            <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-                            <input type="submit" value="OK">
-                        </form> -->
-                        
-                        <form action="/author/" method="post">
-                            {% csrf_token %}
-                            <div class="wrap">
-                                <div class="search">
-                                <!-- <input 
-                                        type="text" 
-                                        id ='author_name' 
-                                        name ='author' 
-                                        class="searchTerm" 
-                                        placeholder="search author...",
-                                        maxlength="100" required> -->
-                                        {{form}}
-                                        
-                                <button type="submit" class="searchButton">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- <p>This is only a tool for you as a reference, don’t rely on it!</p> -->
-                        <br>
-                        <Strong>After you checked the source, let’s move on to step 2!</Strong>
-                        <br>
-                        <a class="common_btn red_bg" style="float:right" href="{% url 'author' %}"><span>Next Step</span></a>
-                        <br>
-                        <br>
-                        <br>
-
-                    </div>
-                </section>
-               
-
-        
-
-
-       
-
-
-
-        <!-- Footer Section -->
-        
-        {% include 'page/footer.html' %}
-        <!-- Footer Section -->
-
-        <!-- Bact To To -->
-        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
-        <!-- Bact To To -->
-
-{% endblock %}
+        <!-- Featured Section -->
+    <!-- <div class="pic">
+        <p class="description" class="col-lg-7 col-sm-7 col-md-7">
+            News stories or articles from well-know news outlets such as ABC news, world health organisation, world trade organisation, 9news,
+        Sydney morning herald etc are far more reliable than sites such as Facebook, WhatsApp university, twitter etc.
+        <br>
+        <a class="common_btn red_bg" href="{% url 'source' %}"><span>Learn More</span></a>
+        </p>
+        <img src="{% static 'images/home_1/source.png' %} " alt="" class="col-lg-5 col-sm-5 col-md-5">
+    </div> -->
+    
+    <input type="button" name="next" class="next action-button" value="Next" />
+</fieldset>

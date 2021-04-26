@@ -14,7 +14,7 @@ html {
 }
 
 body {
-	font-family: montserrat, arial, verdana;
+	font-family: sans-serif;
 }
 /*form styles*/
 #msform {
@@ -23,15 +23,21 @@ body {
 	text-align: center;
 	position: relative;
 }
+.field_card{
+	width: 1000px;
+	align-items: center;
+	min-height: 500px;
+}
+
 #msform fieldset {
-	background: white;
+	background: #f7f7f7;
 	border: 0 none;
 	border-radius: 6px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 1000px auto;
-	margin: 0 10%;
+	margin: 0;
 	
 	/*stacking fieldsets above each other*/
 	position: relative;
@@ -48,7 +54,7 @@ body {
 	margin-bottom: 10px;
 	width: 100%;
 	box-sizing: border-box;
-	font-family: montserrat;
+	font-family: sans-serif;
 	color: #2C3E50;
 	font-size: 13px;
 }

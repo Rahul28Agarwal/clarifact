@@ -1,6 +1,7 @@
 from django import forms
 import datetime
 
+
 class source_form(forms.Form):
     source = forms.CharField(label='',
                                 max_length=100, 
@@ -29,9 +30,10 @@ class fake_news_form(forms.Form):
                                  widget=forms.TextInput(attrs={'placeholder':'Enter the Author Name...',
                                                               'class':'input-form',
                                                               'id':'author'}),
-                                                              required=True)
-    news_date =  forms.DateField(label='What is your birth date?', widget=forms.SelectDateWidget(attrs={'class':'data_input_form'}))
-
+                                                              required=False)
+    news_date =  forms.DateField(label='', widget=forms.SelectDateWidget(attrs={'class':'data_input_form'},
+    years=[i for i in range(1900,2022)]))
+ 
 
 
                                
