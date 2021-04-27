@@ -1,0 +1,83 @@
+{% load static %}
+
+<section class="commonSection featured" style='padding:0px'>
+    <div class="container">
+        <div class="row">
+            <h2 class="card_title">1. CONSIDER THE SOURCE</h2>
+            <div class="col-lg-7 col-sm-12  col-md-7" style='text-align: left;'>
+                <div class="features_content">
+                    <p class="card_sec">
+                        News stories or articles from well-know news outlets such as ABC news, world health organisation, world trade organisation, 9news, Sydney morning herald etc are far more reliable than sites such as Facebook, WhatsApp university, twitter etc.
+                    </p>
+                    <div class="card_singleFeature">
+                        <div class="card_count">01</div>
+                        <h3>ARE YOU FAMILIAR WITH THE SOURCE?</h3>
+                        <p>
+                            There are many variations of passages of lorem ipsum available, but the majority have suffered.
+                        </p>
+                    </div>
+                    <div class="card_singleFeature">
+                        <div class="card_count">02</div>
+                        <h3>IS IT LEGITIMATE?</h3>
+                        <p>
+                            There are many variations of passages of lorem ipsum available, but the majority have suffered.
+                        </p>
+                    </div>
+                    <div class="card_singleFeature">
+                        <div class="card_count">03</div>
+                        <h3>HAS IT BEEN RELIABLE IN THE PAST</h3>
+                        <p>
+                            There are many variations of passages of lorem ipsum available, but the majority have suffered.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-12 col-md-5 noPaddingRight">
+                <div class="features_img">
+                    <a href="{% url 'source' %}" ><img src="{% static 'images/home_1/source.png'  %}" alt=""/></a>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- <section  class="commonSection chooseUs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                
+                <h2 class="sec_title">Url checker</h2>
+                <p>Simply insert the url into the URL Checker, and get an immediate credibility check !</p>
+
+            </div>
+        </div>
+
+        
+        <form action="#but_why" method="post" id='sourceform'>
+            {% csrf_token %}
+            <div class="wrap">
+                <div class="search">
+               
+                        {{form}}
+                        
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+                </div>
+            </div>
+        </form>
+        
+        <br>
+        <Strong>After you checked the source, let’s move on to step 2!</Strong>
+        <br>
+        <a class="common_btn red_bg" style="float:right" href="{% url 'author' %}"><span>Next Step</span></a>
+        <br>
+        <br>
+        <br>
+
+    </div>
+</section> -->

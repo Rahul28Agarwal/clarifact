@@ -5,12 +5,12 @@ import datetime
 class source_form(forms.Form):
     source = forms.CharField(label='',
                                 max_length=100, 
-                                widget=forms.TextInput(attrs={'class' : 'searchTerm','placeholder': 'Search Source...'}))
+                                widget=forms.TextInput(attrs={'class' : 'input-form','placeholder': 'Enter the Source full name...'}))
 
 class author_form(forms.Form):
     author = forms.CharField(label='',
                                 max_length=100, 
-                                widget=forms.TextInput(attrs={'class' : 'searchTerm','placeholder': 'Search Author...'}))
+                                widget=forms.TextInput(attrs={'class' : 'input-form','placeholder': 'Search Author...'}))
 
 
 

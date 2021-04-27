@@ -13,214 +13,88 @@
         {% include 'page/section_nav_bar.html' %}
       
      
-
-      <!-- Agency Section -->
-	  <section class="commonSection why_section">
-		<div class="container">
-			<div class="row">
+	<!-- MultiStep Form -->
+		<div class="container-fluid" id="grad1">
+			<div class="row justify-content-center mt-0">
+				<div class="col-11 col-sm-9 col-md-7 col-lg-12 text-center p-0 mt-3 mb-2">
+					<div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="margin:auto; max-width: 90%; font-size: 14px;">
 				
-				<div class="col-lg-12 col-sm-12 col-md-12">
-					<form id="msform">		
-						<ul id="progressbar">
-							<li class="active">Consider Source</li>
-							<li>Check Author</li>
-							<li>Check Date</li>
-							<li>Check Biases</li>
-							<li>Read Beyond</li>
-							<li>Support Sources</li>
-							<li>Ask Experts</li>
-						</ul>
-			
-					
-					  <!-- fieldsets -->
-					  
-					  <!--1. Consider the Source-->
-					  <fieldset>
-						<h2 class="fs-title">
-						  <strong>
-							  1. Consider the Source
-						  </strong>
-						</h2>
-						<br>
-						<div class="pic">
-							<p class="description" class="col-lg-7 col-sm-7 col-md-7">
-								News stories or articles from well-know news outlets such as ABC news, world health organisation, world trade organisation, 9news,
-							 Sydney morning herald etc are far more reliable than sites such as Facebook, WhatsApp university, twitter etc.
-							 <br>
-							 <a class="common_btn red_bg" href="{% url 'source' %}"><span>Learn More</span></a>
-							</p>
-							<img src="{% static 'images/home_1/source.png' %} " alt="" class="col-lg-5 col-sm-5 col-md-5">
-						</div>			
-												</div>
-						</div>			
-						<input type="button" name="next" class="next action-button" value="Next" />
-						<button type="button" name='next' class="next action-button btn btn-info" value='Next'>Info</button>					    
-					  </fieldset>
-					  
-					  <!--2. Check the Author-->
-					  <fieldset>
-						<h2 class="fs-title">
-						  <strong>
-							  2. Check the Author
-						  </strong>
-						</h2>
-						<br>
-						<div class="pic">
-							<img src="{% static 'images/home_1/check_author.png' %}" alt="" class="col-lg-5 col-sm-5 col-md-5">
-							<p class="description" class="col-lg-7 col-sm-7 col-md-7">Check the author’s bio and do a quick search on them. Are they credible to write about their story? Are they real? Are they experienced?
-							<br>
-							<strong>Trust the author before you trust the news!</strong>
-							<br>
-							<a class="common_btn red_bg" href="{% url 'author' %}"><span>Learn More</span></a>
-							</p>		    	
-						</div>
-						<input type="button" name="previous" class="previous action-button" value="Previous" />
-						<input type="button" name="next" class="next action-button" value="Next" />
-					  </fieldset>
-					  
-					  <!--3. Check the Date-->
-					  <fieldset>
-						  <h2 class="fs-title">
-							<strong>
-								3. Check the Date
-							</strong>
-						  </h2>
-						  <br>
-						  <div class="pic">
-							  <p class="description" class="col-lg-7 col-sm-7 col-md-7"> What news might have been correct at some point of time, might be fake in today’s time! 
-							 It is important to stay updated with the correct version of news.
-							   <br>
-							   <a class="common_btn red_bg" href="{% url 'source' %}"><span>Learn More</span></a>
-							  </p>
-							  <img src="{% static 'images/home_1/check_dates.png' %}" alt="" class="col-lg-5 col-sm-5 col-md-5">
-						  </div>
-						<input type="button" name="previous" class="previous action-button" value="Previous" />
-						<input type="button" name="next" class="next action-button" value="Next" />
-					  </fieldset>
-					  
-					  <!--4. Check for Biases-->
-					  <fieldset>
-						  <h2 class="fs-title">
-							<strong>
-								4. Check for Biases
-							</strong>
-						  </h2>
-						  <br>
-						  <div class="pic">
-							  <img src="{% static 'images/home_1/bias.png' %}" alt="" class="col-lg-5 col-sm-5 col-md-5">
-							  <p class="description" class="col-lg-7 col-sm-7 col-md-7">Especially with the rise of opinionated journalism and websites profiting from polarization, 
-								consider the intended audience for this story and if your 
-								<strong>own beliefs</strong> could affect your judgement.
-							  <br>
-							  <a class="common_btn red_bg" href="{% url 'author' %}"><span>Learn More</span></a>
-							  </p>		    	
-													</p>
-							  </p>		    	
-						  </div>
-						<input type="button" name="previous" class="previous action-button" value="Previous" />
-						<input type="button" name="next" class="next action-button" value="Next" />
-					  </fieldset>
-					  
-					 <!--5. Read Beyond-->
-					  <fieldset>
-						<h2 class="fs-title">
-							<strong>
-								5. Read Beyond
-							</strong>
-						  </h2>
-						  <br>
-						  <div class="pic">
-							  <p class="description" class="col-lg-7 col-sm-7 col-md-7">Even legitimate news sources will sometimes use misleading headlines.
-								 As you're reading the article, ask yourself if the content matches the headline. 
-														 As you're reading the article, ask yourself if the content matches the headline. 
-								 As you're reading the article, ask yourself if the content matches the headline. 
-								 If there are clues whether an article is fake or not, there are going to be more of 
-								 them in the body of the article, not the title. 
-								<strong>Read beyond the headline and decide for yourself!</strong>
-							   <br>
-							   <a class="common_btn red_bg" href="{% url 'read_beyond' %}"><span>Learn More</span></a>
-							  </p>
-							  <img src="{% static 'images/home_1/Read_beyond1.png' %}" alt="" class="col-lg-5 col-sm-5 col-md-5">
-						  </div>
-						<input type="button" name="previous" class="previous action-button" value="Previous" />
-						<input type="button" name="next" class="next action-button" value="Next" />
-					  </fieldset>
-					  
-					  <!--6. Supporting Sources-->
-					  <fieldset>
-						<h2 class="fs-title">
-							<strong>
-								6. Supporting Sources
-							</strong>
-						  </h2>
-						  <br>
-						  <div class="pic">
-							  <img src="{% static 'images/home_1/supporting sources.png' %}" alt="" class="col-lg-5 col-sm-5 col-md-5">
-							  <p class="description" class="col-lg-7 col-sm-7 col-md-7">As quoted by Jolene Engle, <strong>“For Two are Better than One, but Three is Even Better”.</strong> 
-								Multiple sources provide higher scrutiny and investigation of news. It helps improve in-depth knowledge. 
-														Multiple sources provide higher scrutiny and investigation of news. It helps improve in-depth knowledge. 
-								Multiple sources provide higher scrutiny and investigation of news. It helps improve in-depth knowledge. 
-								 More research lets one explore from different angles and perspectives.
-							  <br>
-							  <a class="common_btn red_bg" href="{% url 'author' %}"><span>Learn More</span></a>
-							  </p>		    	
-													</p>
-							  </p>		    	
-						  </div>
-						<input type="button" name="previous" class="previous action-button" value="Previous" />
-						<input type="button" name="next" class="next action-button" value="Next" />
-					  </fieldset>
-					  
-					  
-					  <fieldset>
-						<h2 class="fs-title">
-							<strong>
-								7. Ask the Experts
-							</strong>
-						  </h2>
-						  <br>
-						  <div class="pic">
-							  <p class="description" class="col-lg-7 col-sm-7 col-md-7">Supplement your research with an expert advice from those who know the best. Ask questions that have not been answered. Seek knowledge from trustworthy organisations and respective intellectuals.
-							   <br>
-							   <a class="common_btn red_bg" href="{% url 'ask_expert' %}"><span>Learn More</span></a>
-							  </p>
-							  <img src="{% static 'images/home_1/ask_experts.png' %}" alt="" class="col-lg-5 col-sm-5 col-md-5">
-						  </div>
-						<input type="button" name="previous" class="previous action-button" value="Previous" />
-						
-					  </fieldset>
-			
-					  <br>
-					  <br>
-					  <br>
-					  <br>
-				</form>
-				</div>
+						<div class="row">
+							<div class="col-md-12 mx-0">
+								<form id="msform">
+									{% csrf_token %}
+									<!-- progressbar -->
+									<ul id="progressbar">
+										<li class="active" id="account"><strong>Consider Source</strong></li>
+										<li id="personal"><strong>CHECK AUTHOR</strong></li>
+										<li id="payment"><strong>CHECK DATE</strong></li>
+										<li id=''>CHECK BIASES</li>
+										<li id="confirm"><strong>READ BEYOND</strong></li>
+										<li id=''>SUPPORT SOURCES</li>
+										<li id=''>ASK EXPERTS</li>
+										
+									</ul> <!-- fieldsets -->
+									<fieldset>
+										<div class="form-card">
+											{% include 'page/source_card.html' %}
+										</div> 
+										<input type="button" name="next" class="next action-button" value="Next Step" style='float: right;clear: both;'/>
+									</fieldset>
+									<fieldset>
+										{% include 'page/author_card.html' %}
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
+									</fieldset>
+									<fieldset>
+										{% include 'page/date_card.html' %}
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
+										 
+									</fieldset>
+									<fieldset>
+										{% include 'page/bias_card.html' %}
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
+										 
+									</fieldset>
+									<fieldset>
+										{% include 'page/read_card.html' %}
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
+										 
+									</fieldset>
+									<fieldset>
+										{% include 'page/support_card.html' %}
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
+										 
+									</fieldset>
+									<fieldset>
+										{% include 'page/ask_card.html' %}
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										 
+										 
+									</fieldset>
 
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</section>
-	<!-- Agency Section -->
 
 
 		
 	
 
 
-
-      
-        <!-- Why Choose Section -->
+		{% include 'page/footer.html' %}
+		<!-- Footer Section -->
 		
-		<!-- multistep processing bar section -->
-
-
-
-               
-        <!-- {% include 'page/footer.html' %} -->
-        <!-- Footer Section -->
-
-        <!-- Bact To To -->
-        <!-- <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a> -->
-        <!-- Bact To To -->
+		<!-- Bact To To -->
+		<!-- <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a> -->
+      
+        
 
 {% endblock %}

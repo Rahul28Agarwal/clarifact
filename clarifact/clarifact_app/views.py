@@ -8,6 +8,7 @@ from django.shortcuts import redirect
 from pickle import NONE, load
 import datetime
 from .models import source
+from urllib.parse import urlparse
 
 def index(request):
     return render(request,'page/index.html')
@@ -24,16 +25,37 @@ def solution(request):
 def source_view(response):
     if response.method == 'POST':
         form = source_form(response.POST)
-        is_reliable = False
+        is_reliable = None
         if form.is_valid():
             source_name = form.cleaned_data['source']
+            print(source_name)
+            domain = urlparse(source_name).netloc
+            if(domain):
+                print(domain)
+                domain = domain.split('.')
+                print(domain)
+                if(domain[0] == 'www'):
+                    source_name = domain[1]
+                else:
+                    source_name = domain[0]
+            else:
+                domain = source_name.split('.')
+                print(domain)
+                if(domain[0] == 'www'):
+                    source_name = domain[1]
+                else:
+                    source_name = domain[0]
+            print(source_name)
             t = source.objects
-            if t.filter(name= source_name.lower()):
+            filter = source.objects.filter(url__icontains =source_name)
+            filtered_source = filter.values_list()[0][1]
+            if filter:
+                print('found')
                 is_reliable = True
             else:
                 is_reliable = False
 
-        return render(response, 'page/source.html', {'form':form, "is_reliable":is_reliable})
+        return render(response, 'page/source.html', {'form':form, "is_reliable":is_reliable,'filtered_source':filtered_source})
             # if source.objects.get(name='abc new'):
             #     print('exist')
             # else:
