@@ -38,11 +38,13 @@
 										<div class="form-card">
 											{% include 'page/source_card.html' %}
 										</div> 
+										<a href="{% url 'source' %}" ><button type="button" class="function_button btn btn-info">Source Checker</button></a>
 										<input type="button" name="next" class="next action-button" value="Next Step" style='float: right;clear: both;'/>
 									</fieldset>
 									<fieldset>
 										{% include 'page/author_card.html' %}
 										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										<a href="{% url 'author' %}" ><button type="button" class="function_button btn btn-info">Author Checker</button></a>
 										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
 									</fieldset>
 									<fieldset>
@@ -60,6 +62,7 @@
 									<fieldset>
 										{% include 'page/read_card.html' %}
 										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										<a href="{% url 'fake_news' %}" ><button type="button" class="function_button btn btn-info">Fake detector</button></a>
 										 <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
 										 
 									</fieldset>

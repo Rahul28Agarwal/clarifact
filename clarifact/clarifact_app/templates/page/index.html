@@ -23,17 +23,10 @@
                                 <li class="menu-item-has-children">
                                     <a href="#" id='backToTop_home'>home</a>
                                 </li>
-                                <li><a href="#but_why">But Why?</a></li>
-                                <!-- <li><a href="#about">About</a></li> -->
-                                <li><a href="#consequences">Consequences</a></li>
-                                <!-- <li class="menu-item-has-children"><a href="#">Services</a>
-                                    <ul class="sub-menu">
-                                        <li><a href=" {% static 'services.html' %} ">Spot Fake News</a></li>
-                                        <li><a href=" {% static 'service_detail.html' %} ">Quiz</a></li>
-                                    </ul>
-                                </li> -->
+                                <!-- <li><a href="#but_why">But Why?</a></li>
+
+                                <li><a href="#consequences">Consequences</a></li> -->
                                 <li><a href="{% url 'solution' %}">Spot Fake News</a></li>
-                                <li><a href=''>Quiz</a></li>
 
                             </ul>
                         </nav>
@@ -61,7 +54,8 @@
             <div class="carousel-inner">
         
               <div class="item active">
-                <img src="{% static 'images/slider/1_1.png' %} " alt="Los Angeles" style="width:100%;">
+                <img src="{% static 'images/slider/education.png' %} " alt="Los Angeles" style="width:100%;">
+                <a href="{% url 'solution' %}" ><button class="btn">Learn More...</button></a>
     
               </div>
         
@@ -250,34 +244,7 @@
                     A study conducted by DIGITAL NEWS REPORT:AUSTRALIA 2020</h4>
             </div>
         </section>
-        <!-- FunFact Section -->
-        <!-- What We Do Section -->
-        <!-- <section class="commonSection what_wedo">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h4 class="sub_title">how do we works</h4>
-                        <h2 class="sec_title">Digital Experience</h2>
-                        <p class="sec_desc">
-                            We are committed to providing our customers with exceptional service while<br> offering our employees the best training.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12">
-                        <div class="videoWrap">
-                            <img src=" {% static 'images/home_1/3.jpg' %} " alt="">
-                            <div class="play_video">
-                                <a class="video_popup" href="https://www.youtube.com/watch?v=A7ZkZazfvao"><i class="fa fa-play"></i></a>
-                                <h2>Watch Video</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section> -->
-        <!-- What We Do Section -->
+      
 
         <!-- Portfolio Section -->
         <section id = 'consequences' class="commonSection porfolio">
@@ -370,231 +337,11 @@
         </section>
         <!-- Portfolio Section -->
 
-       
-
     
 
-        <!-- Team Section -->
-        <!-- <section class="commonSection team">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h4 class="sub_title">meet the team</h4>
-                        <h2 class="sec_title">expert people</h2>
-                        <p class="sec_desc">
-                            We are committed to providing our customers with exceptional service while<br> offering our employees the best training.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="team_slider">
-                <div class="singleTM">
-                    <div class="tm_img">
-                        <img src=" {% static 'images/team/1.jpg' %} " alt="">
-                        <div class="tm_overlay">
-                            <div class="team_social">
-                                <a href="#"><span>Facebook</span></a>
-                                <a href="#"><span>Twitter</span></a>
-                                <a href="#"><span>Youtube</span></a>
-                            </div>
-                            <a href="#" class="common_btn"><span>learn more</span></a>
-                        </div>
-                    </div>
-                    <div class="detail_TM">
-                        <h5>kevin smith</h5>
-                        <h6>co founder</h6>
-                    </div>
-                </div>
-                <div class="singleTM">
-                    <div class="tm_img">
-                        <img src=" {% static 'images/team/2.jpg' %} " alt="">
-                        <div class="tm_overlay">
-                            <div class="team_social">
-                                <a href="#"><span>Facebook</span></a>
-                                <a href="#"><span>Twitter</span></a>
-                                <a href="#"><span>Youtube</span></a>
-                            </div>
-                            <a href="#" class="common_btn"><span>learn more</span></a>
-                        </div>
-                    </div>
-                    <div class="detail_TM">
-                        <h5>Jessica Brown</h5>
-                        <h6>General Manager</h6>
-                    </div>
-                </div>
-                <div class="singleTM">
-                    <div class="tm_img">
-                        <img src=" {% static 'images/team/3.jpg' %} " alt="">
-                        <div class="tm_overlay">
-                            <div class="team_social">
-                                <a href="#"><span>Facebook</span></a>
-                                <a href="#"><span>Twitter</span></a>
-                                <a href="#"><span>Youtube</span></a>
-                            </div>
-                            <a href="#" class="common_btn"><span>learn more</span></a>
-                        </div>
-                    </div>
-                    <div class="detail_TM">
-                        <h5>Mike Hardson</h5>
-                        <h6>Senior Designer</h6>
-                    </div>
-                </div>
-                <div class="singleTM">
-                    <div class="tm_img">
-                        <img src=" {% static 'images/team/4.jpg' %} " alt="">
-                        <div class="tm_overlay">
-                            <div class="team_social">
-                                <a href="#"><span>Facebook</span></a>
-                                <a href="#"><span>Twitter</span></a>
-                                <a href="#"><span>Youtube</span></a>
-                            </div>
-                            <a href="#" class="common_btn"><span>learn more</span></a>
-                        </div>
-                    </div>
-                    <div class="detail_TM">
-                        <h5>Rose Ford</h5>
-                        <h6>Marketing manager</h6>
-                    </div>
-                </div>
-                <div class="singleTM">
-                    <div class="tm_img">
-                        <img src=" {% static 'images/team/5.jpg' %} " alt="">
-                        <div class="tm_overlay">
-                            <div class="team_social">
-                                <a href="#"><span>Facebook</span></a>
-                                <a href="#"><span>Twitter</span></a>
-                                <a href="#"><span>Youtube</span></a>
-                            </div>
-                            <a href="#" class="common_btn"><span>learn more</span></a>
-                        </div>
-                    </div>
-                    <div class="detail_TM">
-                        <h5>John Albert</h5>
-                        <h6>Brand Officer</h6>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- Team Section -->
-
-        <!-- Client Section -->
-        <!-- <section class="commonSection client">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h4 class="sub_title">our clients</h4>
-                        <h2 class="sec_title">they trust us</h2>
-                        <p class="sec_desc">
-                            We are committed to providing our customers with exceptional service while<br> offering our employees the best training.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="client_slider">
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/1.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/2.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/3.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/4.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/5.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/1.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/2.png' %} " alt=""/>
-                                </a>
-                            </div>
-                            <div class="singleClient">
-                                <a href="#">
-                                    <img src=" {% static 'images/client/3.png' %} " alt=""/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- Client Section -->
 
 
-        <!-- Blog Section -->
-        <!-- <section class="commonSection blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h4 class="sub_title">our news & articles</h4>
-                        <h2 class="sec_title">latest blog posts</h2>
-                        <p class="sec_desc">
-                            We are committed to providing our customers with exceptional service while<br> offering our employees the best training.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-md-4">
-                        <div class="latestBlogItem">
-                            <div class="lbi_thumb">
-                                <img src=" {% static 'images/blog/1.jpg' %} " alt="">
-                            </div>
-                            <div class="lbi_details">
-                                <a href="#" class="lbid_date">26 NOV</a>
-                                <h2><a href=" {% static 'blog_single.html' %} ">basic rules of running web  agency business</a></h2>
-                                <a class="learnM" href=" {% static 'blog_single.html' %} ">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-4">
-                        <div class="latestBlogItem">
-                            <div class="lbi_thumb">
-                                <img src=" {% static 'images/blog/2.jpg' %} " alt="">
-                            </div>
-                            <div class="lbi_details">
-                                <a href="#" class="lbid_date">20 NOV</a>
-                                <h2><a href=" {% static 'blog_single.html' %} ">Become the best sale marketer</a></h2>
-                                <a class="learnM" href=" {% static 'blog_single.html' %} ">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix hidden-lg hidden-md hidden-xs"></div>
-                    <div class="col-lg-4 col-sm-6 col-md-4">
-                        <div class="latestBlogItem">
-                            <div class="lbi_thumb">
-                                <img src=" {% static 'images/blog/3.jpg' %} " alt="">
-                            </div>
-                            <div class="lbi_details">
-                                <a href="#" class="lbid_date">16 NOV</a>
-                                <h2><a href=" {% static 'blog_single.html' %} ">Introducing latest mopaly features</a></h2>
-                                <a class="learnM" href=" {% static 'blog_single.html' %} ">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- Blog Section -->
-
+        
 
 
         <!-- Footer Section -->
