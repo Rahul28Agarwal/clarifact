@@ -3376,6 +3376,57 @@ textarea.input-form:focus{
     color: #e62b4a;
 }
 
+
+
+.item {
+    position: relative;
+    width: 100%;
+    /* max-width: 400px; */
+  }
+  
+  .item img {
+    width: 100%;
+    /* height: auto; */
+  }
+  
+  .item .btn {
+    position: absolute;
+    
+    top: 56%;
+    left: 80%;
+
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #d84d17;
+    color: white;
+    font-size: 16px;
+    padding: 17px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .item .btn:hover {
+    /* background-color: black; */
+    padding: 20px 40px;
+  }
+
+  .function_button{
+        width: 119px;
+      /* background: #27AE60; */
+      font-weight: bold;
+      color: white;
+      border: 0 none;
+      border-radius: 1px;
+      cursor: pointer;
+      padding: 10px 5px;
+      margin: 10px 5px;
+  }
+  .function_button:hover, .function_button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #269abc;
+}
+
 /*----------------------------------------------------
 / 31. solution page
 ------------------------------------------------------*/
@@ -3423,4 +3474,56 @@ textarea.input-form:focus{
         max-width: 595px;
         position: relative;
         color: #000;
+    }
+    .card_title{
+        font-size: 30px;
+        line-height: 60px;
+        font-weight: 400;
+        color: #000;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: -2px 0 10px;
+    }
+    .card_sec{
+        margin: 0 0 35px;
+        font-size: 17px;
+        text-align: left;
+    }
+    .card_singleFeature{
+        position: relative;
+    padding-left: 70px;
+    margin-bottom: 34px;
+    }
+    .card_singleFeature:not(:last-child) ::after{
+        position: absolute;
+        left: 15px;
+        top: 31px;
+        content: '';
+        width: 2px;
+        height: 95px;
+        background: darkgrey;
+    }
+    .card_singleFeature .card_count{
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        width: 30px;
+        height: 30px;
+        line-height: .8;
+        background: darkgrey;
+    }
+    .singleFeature .card_count{
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        width: 30px;
+        height: 30px;
+        line-height: .8;
+        background: darkgrey;
     }

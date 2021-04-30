@@ -1,3 +1,4 @@
+
 {% extends "page/header.html" %}
 
 {% load static %}
@@ -9,145 +10,51 @@
         {% include 'page/preloader.html' %}
         <!-- Header 01 -->
         {% include 'page/section_nav_bar.html' %}
-        <!-- Header 01 -->
-
-
-
-                <!-- Page Banner -->
-                <section class="authopageBanner">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="banner_content text-center">
-                                    <h4>Is it Fake News?</h4>
-                                    <h2>Check the Author</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Page Banner -->
-
-                <section>
-                    <div class="news_author">
-                        <img src="{% static 'images/bg/top.png' %}" alt="">
-                    </div>
-                    
-                </section>
-                <!-- Featured Section -->
-        <section class="commonSection featured">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-sm-12  col-md-5">
-                        <div class="features_content">
-                            <h4 class="sub_title" style="color: #a11818;font-size: 14px;">
-                                Trust the author before you trust the news!</h4>
-                            <h2 class="sec_title">About Author</h2>
-                            <p class="sec_desc">
-                                
-                            </p>
-                            <div class="singleFeature">
-                                <div class="f_count">01</div>
-                                
-                                <p>
-                                    Most of the fake news author's aren’t even journalists, but paid trolls
-                                    
-                                  
-                                </p>
-                            </div>
-                            <div class="singleFeature">
-                                <div class="f_count">02</div>
-                                
-                                <p>
-                                    Fake news articles often don't include author names. If included, check the author's bio and 
-                                    do a quick search on them.
-                                </p>
-                            </div>
-                            <div class="singleFeature">
-                                <div class="f_count">03</div>
-                                <p>
-                                    If they have advanced degrees or professional backgrounds that they are writing about,
-                                     they have met the minimum requirement for credibility
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-sm-12 col-md-7 noPaddingRight">
-                        <div class="features_img">
-                            <img src="{% static 'images/bg/wondering.png' %}" alt=""/>
-                            
-                        </div>
-                    </div>
-                </div>
+<section class="commonSection ContactPage" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h4 class="sub_title"></h4>
+                <h2 class="sec_title"style='font-size: 42px;
+                line-height: 62px;
+                font-weight: 400;
+                color: #000;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin: 26px 0 16px;'>AUTHOR CHECKER</h2>
+                <p class="sec_desc">
+                    Let’s get started! Go find out more about the author to see if you can trust them!<br>
+                    Simply type the author name in the search bar, and find out more about them! 
+                </p>
             </div>
-        </section>
-        <!-- Featured Section -->
-
-               
-
-
-
-
-                <!-- Why Choose Section -->
-                <section  class="commonSection chooseUs">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                
-                                <h2 class="sec_title">Author checker</h2>
-                                <p class="sec_desc">
-                                    Let’s get started! Go find out more about the author to see if you can trust them! 
-                                </p>
-                            </div>
-                        </div>
-                        <!-- <form action="/your-name/" method="post">
-                            <label for="your_name">Your name: </label>
-                            <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-                            <input type="submit" value="OK">
-                        </form> -->
-                        
-                        <form action="/author/" method="post">
-                            {% csrf_token %}
-                                <div class="wrap">
-                                <div class="search">
-                                <!-- <input 
-                                        type="text" 
-                                        id ='author_name' 
-                                        name ='author' 
-                                        class="searchTerm" 
-                                        placeholder="paste the source link here...",
-                                        maxlength="100" required> -->
-                                        {{form}}
-                                        
-                                <button type="submit" class="searchButton">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                                </div>
-                            </div>
-                        </form>
-                        <!-- <p>This is only a tool for you as a reference, don’t rely on it!</p>> -->
-                        <Strong>Simply type the author name in the search bar, and find out more about them! </Strong>
-                        <a class="common_btn red_bg" style="float:right" href="{% url 'author' %}"><span>Next Step</span></a>
-
-                    </div>
-                </section>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-md-10 col-md-offset-1">
                 
 
-        
+                <form action="/author/" method="post" class="contactFrom" id="detector">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12">
+                            {{form}}
+                        </div>
+                
+                        
+                    </div>
+                    <button class="common_btn red_bg" type="submit" id="con_submit"><span>Check</span></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
 
+{% include 'page/footer.html' %}
+<!-- Footer Section -->
 
 
 
-        <!-- Footer Section -->
-        
-        {% include 'page/footer.html' %}
-        <!-- Footer Section -->
-
-        <!-- Bact To To -->
-        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
-        <!-- Bact To To -->
 
 {% endblock %}

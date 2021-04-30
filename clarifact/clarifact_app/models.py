@@ -5,5 +5,5 @@ class source(models.Model):
     name = models.CharField(max_length=500,default='none')
     url = models.URLField(default='none')
     def __str__(self):
-        return self.name
+        return self.url
     
