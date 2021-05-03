@@ -82,7 +82,7 @@
     width: 0;
     height: 1px;
     content: '';
-    background: #c11e1e;
+    background: #1ed8ca;
     left: 0;
     right: 0;
     bottom: -5px;
@@ -92,7 +92,7 @@
 }
 .mainmenu ul > li.active > a,
 .mainmenu ul li a:hover{
-    color: #c11e1e;
+    color: #1ed8ca;
 }
 .mainmenu ul > li.active > a:after,
 .mainmenu ul li a:hover:after{
@@ -543,6 +543,8 @@
     position: relative;
     overflow: hidden;
     margin: 0 0 30px;
+    background: rgba(230, 43, 74, .8);
+    overflow: hidden;
 }
 .singlefolio img {
     display: block;
@@ -551,24 +553,44 @@
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
 }
-.folioHover {
-    visibility: hidden;
-    opacity: 0;
+.red_background{
     position: absolute;
-    left: 20px;
-    bottom: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    background: rgb(43 57 230 / 80%);;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    content: '';
+    transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -webkit-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+}
+
+.folioHover {
+    visibility: visible;
+    /* opacity: 0; */
+    position: absolute;
+    /* background: rgba(230, 43, 74, .8); */
+    left: 0px;
+    bottom: 0px;
     z-index: 3;
-    transition: all ease 900ms;
+    height: 100%;
+    width: 100%;
+    /* transition: all ease 900ms;
     -moz-transition: all ease 900ms;
     -webkit-transition: all ease 900ms;
-    -o-transition: all ease 900ms;
+    -o-transition: all ease 900ms; */
 }
 .description{
     font-size: 17px;
     padding: 10px 0 0 0;
     text-align: justify;
 }
-.singlefolio:after{
+/* .singlefolio:after{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -582,7 +604,7 @@
     -moz-transition: all 0.4s ease-out;
     -webkit-transition: all 0.4s ease-out;
     -o-transition: all 0.4s ease-out;
-}
+} */
 .singlefolio .folioHover a.cate {
     font-size: 12px;
     line-height: 32px;
@@ -602,6 +624,7 @@
     letter-spacing: .80px;
     margin: 0;
     text-transform: uppercase;
+   
 }
 .singlefolio .folioHover h4 a{
     color: #fff;    
@@ -614,14 +637,21 @@
     transition: all ease 400ms;
     -webkit-transition: all ease 400ms;
     -moz-transition: all ease 400ms;
+    text-align: center;
+    margin: 10px;
 }
 .singlefolio .folioHover p{
     color: #fff;    
     transition: all ease 400ms;
     -webkit-transition: all ease 400ms;
     -moz-transition: all ease 400ms;
+    text-align: center;
+    text-justify: inter-word;
+    margin: 28px;
+    font-weight: bold;
+
 }
-.singlefolio:hover img {
+/* .singlefolio:hover img {
     transform: scale(1.1) rotate(2deg);
     -moz-transform: scale(1.1) rotate(2deg);
     -webkit-transform: scale(1.1) rotate(2deg);
@@ -637,11 +667,11 @@
 }
 .singlefolio:hover:after{
     width: 100%;
-}
-.singlefolio .folioHover a.cate:hover,
+} */
+/* .singlefolio .folioHover a.cate:hover,
 .singlefolio .folioHover h4 a:hover{
     color: #000;
-}
+} */
 
 
 /*----------------------------------------------------
