@@ -559,7 +559,7 @@
     left: 0;
     right: 0;
     opacity: 0.5;
-    background: rgb(43 57 230 / 80%);;
+    background: rgb(4 4 4 / 80%);
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -633,7 +633,7 @@
     -moz-transition: all ease 400ms;
 }
 .singlefolio .folioHover h2{
-    color: #fff;    
+    color: #d4ce1a;    
     transition: all ease 400ms;
     -webkit-transition: all ease 400ms;
     -moz-transition: all ease 400ms;
