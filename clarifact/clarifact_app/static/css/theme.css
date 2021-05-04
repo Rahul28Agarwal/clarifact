@@ -1002,7 +1002,7 @@
     display: inline-block;
 }
 .singleClient a img {
-    max-width: 119px;
+    max-width: 210px;
     height: auto;
     position: absolute;
     left: 0;
@@ -1010,7 +1010,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    opacity: .4;
+    opacity: .6;
     display: inline-block !important;
     transition: all ease 500ms;
     -moz-transition: all ease 500ms;
@@ -3531,6 +3531,15 @@ textarea.input-form:focus{
         content: '';
         width: 2px;
         height: 95px;
+        background: darkgrey;
+    }
+    #ask_the_expert:not(:last-child) ::after{
+        position: absolute;
+        left: 15px;
+        top: 31px;
+        content: '';
+        width: 2px;
+        height: 56px;
         background: darkgrey;
     }
     .card_singleFeature .card_count{
