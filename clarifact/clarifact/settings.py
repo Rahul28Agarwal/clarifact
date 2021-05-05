@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clarifact_app',
     'import_export',
+    
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,4 @@ STATIC_URL = '/static/'
 STATICFIFLES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+

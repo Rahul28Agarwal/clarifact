@@ -31,6 +31,14 @@ class fake_news_form(forms.Form):
                                                               'class':'input-form',
                                                               'id':'author'}),
                                                               required=False)
+    source = forms.CharField(label='',
+                                max_length=100, 
+                                widget=forms.TextInput(attrs={'class' : 'input-form','placeholder': 'Source URL(https://www.focusnews.com.ng/)'}))
+
+    CHOICES = [('P','Positive'),('N','Negative')]
+    news_bias= forms.CharField(label='What do you think about this topic?', widget=forms.RadioSelect(choices=CHOICES, attrs={
+        'class':'radio_button'
+    }))
     news_date =  forms.DateField(label='', widget=forms.SelectDateWidget(attrs={'class':'data_input_form'},
     years=[i for i in range(1900,2022)]))
  

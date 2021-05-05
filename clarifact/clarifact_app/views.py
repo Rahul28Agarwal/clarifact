@@ -82,6 +82,48 @@ def author(response):
 
     return render(response, 'page/author.html', {'form':form})
 
+def check_source(source_name):
+    is_reliable = None
+    domain = urlparse(source_name).netloc
+    if(domain):
+        print(domain)
+        domain = domain.split('.')
+        print(domain)
+        if(domain[0] == 'www'):
+            source_name = domain[1]
+        else:
+            source_name = domain[0]
+    else:
+        domain = source_name.split('.')
+        print(domain)
+        if(domain[0] == 'www'):
+            source_name = domain[1]
+        else:
+            source_name = domain[0]
+    print(source_name)
+    t = source.objects
+    filter = source.objects.filter(url__icontains =source_name)
+    filtered_source = filter.values_list()[0][1]
+    if filter:
+        print('found')
+        is_reliable = True
+    else:
+        is_reliable = False
+    return is_reliable
+
+def sentiment_analysis(text):
+    # sentiment = load(open('/home/rahulagg/clarifact/clarifact/clarifact_app/sentiment_model.pkl', 'rb'))
+    sentiment = load(open('sentiment_model.pkl', 'rb'))
+    result = sentiment.polarity_scores(text)
+    senti = None
+    if((result['neg']>result['neu']) and (result['neg']>result['pos'])):
+        senti ='negative'
+    elif((result['neu']>result['neg']) and (result['neu']>result['pos'])):
+        senti ='neutral'
+    else:
+        senti ='positive'
+    return senti
+
 def fake_news(response):
     model = load(open('model.pkl', 'rb'))
     vec = load(open('transformation.pkl', 'rb'))
@@ -95,18 +137,24 @@ def fake_news(response):
             title = newsform.cleaned_data['news_title']
             date = newsform.cleaned_data['news_date']
             author = newsform.cleaned_data['news_author']
+            source = newsform.cleaned_data['source']
+            bias = newsform.cleaned_data['news_bias']
             print(type(date))
             if(date == datetime.date(1900, 1, 1)):
                 date = None
             print(date)
             vec_result = vec.transform([text])
             result = model.predict(vec_result)[0]
-            
+            sentiment = sentiment_analysis(text)
+
+            is_reliable = check_source(source)
             return render(response, 'page/result.html',{'text':text,
                                                          'ans':result,
-                                                         'autho':author,
+                                                         'author':author,
                                                          'date':date,
-                                                         'title':title})
+                                                         'title':title,
+                                                         'is_reliable':is_reliable,
+                                                         'sentiment':sentiment})
     else:
         
         newsform = fake_news_form()
