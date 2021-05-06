@@ -8,13 +8,14 @@
         <!-- Preloading -->
         {% include 'page/preloader.html' %}
         <!-- Header 01 -->
-        <header class="header_01" id="header">
+        {% include 'page/section_nav_bar.html' %}
+        <!-- <header class="header_01" id="header">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 col-sm-3 col-md-3">
                         <div class="logo">
                             <a href="{% url 'index' %}"><img src=" {% static 'images/logo_clarifact1.png' %} " alt=""/></a>
-                            <!-- <h3 style="color:white;">Clarifact</h3> -->
+                            
                         </div>
                     </div>
                     <div class="col-lg-8 col-sm-7 col-md-7">
@@ -23,9 +24,7 @@
                                 <li class="menu-item-has-children">
                                     <a href="#" id='backToTop_home'>home</a>
                                 </li>
-                                <!-- <li><a href="#but_why">But Why?</a></li>
-
-                                <li><a href="#consequences">Consequences</a></li> -->
+                                
                                 <li><a href="{% url 'solution' %}">Spot Fake News</a></li>
 
                             </ul>
@@ -34,7 +33,7 @@
                     
                 </div>
             </div>
-        </header>
+        </header> -->
         <!-- Header 01 -->
 
 
@@ -55,7 +54,8 @@
         
               <div class="item active">
                 <img src="{% static 'images/slider/education.png' %} " alt="Los Angeles" style="width:100%;">
-                <a href="{% url 'solution' %}" ><button class="btn">Learn More...</button></a>
+                
+                <a href="{% url 'solution' %}" ><button class="btn common_btn">Let's start</button></a>
     
               </div>
         
@@ -140,8 +140,8 @@
                     </div>
                 </div>
                 <div class="row custom_column">
-                    <div class="col-lg-6 col-sm-4 col-md-3">
-                        <div  class="icon_box_1 text-center"></a>
+                    <a href="{% url 'solution' %}"><div class="col-lg-6 col-sm-4 col-md-3">
+                        <div  class="icon_box_1 text-center">
                             
                                 <div class="front">
                                     <h2>Educate Yourself</h2>
@@ -153,10 +153,10 @@
                                 </div>
 
                             
-                        </div>
+                        </div></a>
                     </div>
                     <div class="col-lg-6 col-sm-4 col-md-3">
-                        <div  class="icon_box_1 text-center"></a>
+                        <a href="{% url 'fake_news' %}">  <div  class="icon_box_1 text-center">
                             
                                 <div class="front">
                                     <h2>Fake News Detector</h2>
@@ -168,7 +168,7 @@
                                 </div>
 
                             
-                        </div>
+                        </div></a>
                     </div>
                     <!-- <div class="col-lg-3 col-sm-4 col-md-3">
                         <a href=" {% static 'service_detail.html' %} " class="icon_box_1 text-center">
