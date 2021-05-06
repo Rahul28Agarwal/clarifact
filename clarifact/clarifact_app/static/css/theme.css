@@ -1119,6 +1119,15 @@
     line-height: 30px;
     margin: 0;
 }
+.radio_button{
+    display: inline-block;
+    /* align-content: end; */
+    padding-left: 42px;
+}
+.radio_button li{
+    display: inline-block;
+    padding-left: 24px;
+}
 
 /*----------------------------------------------------
 / 11. Testimonail Section

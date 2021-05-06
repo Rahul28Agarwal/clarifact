@@ -35,12 +35,21 @@
                         <div class="col-lg-12 col-sm-12">
                             {{form.news_text}}
                         </div>
+                        <div class="col-lg-12 col-sm-12" style='text-align: left;'>
+                            {{form.news_bias.label_tag}}
+                            {{form.news_bias}}
+                        </div>
+                       
                         <div class="col-lg-6 col-sm-6">
                             {{form.news_author}}
                         </div>
                         <div class="col-lg-6 col-sm-6">
+                            {{form.source}}
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
                             {{form.news_date}}
                         </div>
+
                         
                     </div>
                     <button class="common_btn red_bg" type="submit" id="con_submit"><span>Check</span></button>

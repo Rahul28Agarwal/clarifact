@@ -10,7 +10,7 @@
         <!-- Header 01 -->
         {% include 'page/section_nav_bar.html' %}
 
-<section class="commonSection blogDetails">
+<!-- <section class="commonSection blogDetails">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-sm-10">
@@ -31,6 +31,12 @@
                             {{text}}
                         </p>
                     </div>
+
+                    <div class="blog_details">
+                        <p style='text-align: justify'>
+                            {{sentiment}}
+                        </p>
+                    </div>
                     <div class="post_author">
                         {% if ans == 'Fake' %}
                             <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
@@ -46,11 +52,190 @@
             
         </div>
     </div>
+    
 </section>
+{% if is_reliable != None %}
+<section class="commonSection blogDetails" style='padding:0px'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-sm-10">
+                <div class="single_blog">
+                    <div class="blog_thumb">
+                        <img src="images/blog/7.jpg" alt=""/>
+                    </div>
+ 
 
-{% include 'page/footer.html' %}
+                    <div class="post_author">
+                        {% if is_reliable == True %}
+                            <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
+                            
+                            <h1>{{filtered_source}} is a well-know news outlets</h1>
+                        {% elif is_reliable == False  %}
+                            <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
+                            <h1>{{filtered_source}} doesn't seems to be a well-know news outlets.</h1>
+                        {% endif %}
+                        
+                        
+                    </div>
+                  
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endif %} -->
+
+<link rel="stylesheet" type="text/css" href=" {% static 'css/result.css' %} "/>
 <!-- Footer Section -->
+<section class="timeline">
+    <div class="container">
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content js--fadeInLeft">
+          <h2>Source</h2>
+          {% if is_reliable == None %}
+          <p>Please check the source.</p>
 
+          {% elif is_reliable == True %}
+          <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
+          
+          <h1>{{filtered_source}} is a well-know news outlets</h1>
+            {% elif is_reliable == False  %}
+                <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
+                <h1>{{filtered_source}} doesn't seems to be a well-know news outlets.</h1>
+            {% endif %}
+          
+          <!-- <p>{{filtered_source}} is a well-know news outlets</p> -->
+          <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+        </div>
+      </div> 
+  
+      <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header">
+            <h2>Author </h2>
+          </div>
+          <!-- <div class="date">25 MAY 2016</div> -->
+          
+          {% if author %}
+          <p>Check some details about author</p>
+          <a href={{author_check}} class="bnt-more" href="javascript:void(0)">{{author}}</a>
+          {% else %}
+          <p>Please check the author.</p>
+          {% endif %}
+        </div>
+  
+      </div>   
+  
+      <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content js--fadeInLeft">
+          <!-- <div class="date">3 JUN 2016</div> -->
+          <blockquote>
+            {% if ans == 'Fake' %}
+            <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
+            <h1>We are {{fake_prob}}% sure that the given news is not reliable</h1>
+          {% elif ans == 'Real' %}
+            <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
+            <h1>We are {{real_prob}}% sure that the given news is reliable</h1>
+          {% endif %}
+          </blockquote>
+         
+            
+          <!-- <h2>Quote</h2>
+          <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote> -->
+        </div>
+      </div>   
+  
+      <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content js--fadeInRight">
+          <h2>Bias</h2>
+          <!-- <div class="date">22 JUN 2016</div> -->
+          <p>{{sentiment}}</p>
+          <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+        </div>
+      </div>   
+  
+      <!-- <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header">
+            <h2>Card Title</h2>
+          </div>
+          <div class="date">10 JULY 2016</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+          <a class="bnt-more" href="javascript:void(0)">More</a>
+        </div>
+      </div>    -->
+  
+      <!-- <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header">
+            <h2>Card Title</h2>
+          </div>
+          <div class="date">30 JULY 2016</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+          <a class="bnt-more" href="javascript:void(0)">More</a>
+        </div>
+      </div>   -->
+  
+      <!-- <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content js--fadeInLeft">
+          <div class="date">5 AUG 2016</div>
+          <h2>Quote</h2>
+          <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
+        </div>
+      </div>    -->
+  
+      <!-- <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header">
+            <h2>Card Title</h2>
+          </div>
+          <div class="date">19 AUG 2016</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
+          <a class="bnt-more" href="javascript:void(0)">More</a>
+        </div>
+      </div>   -->
+  
+      <div class="timeline-item">
+  
+        <div class="timeline-img"></div>
+  
+        <div class="timeline-content js--fadeInLeft">
+          <!-- <div class="date">1 SEP 2016</div> -->
+          <h2>Ask the Expert</h2>
+          <p>Still feel unsure about the credibility of the news that you are reading?</p>
+          <a href="{% url 'ask_expert' %}" class="bnt-more" href="javascript:void(0)">Consult a expert</a>
+        </div>
+      </div>   
+  
+  
+  
+    </div>
+  </section>
+  {% include 'page/footer.html' %} 
 <!-- Bact To To -->
 <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
 <!-- Bact To To -->
