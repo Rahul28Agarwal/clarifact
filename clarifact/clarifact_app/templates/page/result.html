@@ -87,47 +87,52 @@
 {% endif %} -->
 
 <link rel="stylesheet" type="text/css" href=" {% static 'css/result.css' %} "/>
+<br/>
+<h1><div align="center"> News Analysis </div></h1>
 <!-- Footer Section -->
 <section class="timeline">
     <div class="container">
       <div class="timeline-item">
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content js--fadeInLeft">
-          <h2>Source</h2>
+          <blockquote>
+          <h2>Source：<a href = {{source}} style='text-decoration: underline;'>{{source_name}}</a></h2>
           {% if is_reliable == None %}
           <p>Please check the source.</p>
 
           {% elif is_reliable == True %}
-          <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
+            <h1>&#10004;&#65039;</h1>
           
-          <h1>{{filtered_source}} is a well-know news outlets</h1>
+          <p>{{source_name}} is a well-know news outlets</p>
             {% elif is_reliable == False  %}
-                <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
-                <h1>{{filtered_source}} doesn't seems to be a well-know news outlets.</h1>
+                <h1>&#10060</h1>
+                <p>{{source_name}} doesn't seems to be a well-know news outlets.</p>
             {% endif %}
+          </blockquote>
           
           <!-- <p>{{filtered_source}} is a well-know news outlets</p> -->
           <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
         </div>
-      </div> 
+      </div>
+
   
       <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
-        <div class="timeline-content timeline-card js--fadeInRight">
-          <div class="timeline-img-header">
-            <h2>Author </h2>
-          </div>
+
+        <div class="timeline-content js--fadeInRight">
+          <blockquote>
+          <h2>Author：{{author}}</h2>
           <!-- <div class="date">25 MAY 2016</div> -->
           
           {% if author %}
-          <p>Check some details about author</p>
-          <a href={{author_check}} class="bnt-more" href="javascript:void(0)">{{author}}</a>
+          <p>Check more details about {{author}}</p>
+          <a href={{author_check}} class="bnt-more" href="javascript:void(0)">View Profile</a>
           {% else %}
           <p>Please check the author.</p>
           {% endif %}
+          </blockquote>
         </div>
   
       </div>   
@@ -139,12 +144,13 @@
         <div class="timeline-content js--fadeInLeft">
           <!-- <div class="date">3 JUN 2016</div> -->
           <blockquote>
+            <h2>Content:</h2>
             {% if ans == 'Fake' %}
-            <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
-            <h1>We are {{fake_prob}}% sure that the given news is not reliable</h1>
+            <h1>&#10060</h1>
+            <p>We are {{fake_prob}}% sure that the given news is {{ans}}</p>
           {% elif ans == 'Real' %}
-            <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
-            <h1>We are {{real_prob}}% sure that the given news is reliable</h1>
+            <h1>&#10004;&#65039;</h1>
+            <p>We are {{real_prob}}% sure that the given news is {{ans}}</p>
           {% endif %}
           </blockquote>
          
@@ -159,10 +165,13 @@
         <div class="timeline-img"></div>
   
         <div class="timeline-content js--fadeInRight">
-          <h2>Bias</h2>
+          <blockquote>
+          <h2>Bias: </h2>
           <!-- <div class="date">22 JUN 2016</div> -->
           <p>{{sentiment}}</p>
+          <p>{{percentage}}</p>
           <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+          </blockquote>
         </div>
       </div>   
   
@@ -224,10 +233,12 @@
         <div class="timeline-img"></div>
   
         <div class="timeline-content js--fadeInLeft">
+          <blockquote>
           <!-- <div class="date">1 SEP 2016</div> -->
-          <h2>Ask the Expert</h2>
+          <h2>Ask the Expert:</h2>
           <p>Still feel unsure about the credibility of the news that you are reading?</p>
           <a href="{% url 'ask_expert' %}" class="bnt-more" href="javascript:void(0)">Consult a expert</a>
+          </blockquote>
         </div>
       </div>   
   

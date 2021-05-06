@@ -41,8 +41,8 @@ class fake_news_form(forms.Form):
     news_bias= forms.CharField(label='What do you think about this topic?', widget=forms.RadioSelect(choices=CHOICES, attrs={
         'class':'radio_button'
     }))
-    news_date =  forms.DateField(label='', widget=forms.SelectDateWidget(attrs={'class':'data_input_form'},
-    years=[i for i in range(1900,2022)]))
+    # news_date =  forms.DateField(label='', widget=forms.SelectDateWidget(attrs={'class':'data_input_form'},
+    # years=[i for i in range(1900,2022)]))
  
 
 

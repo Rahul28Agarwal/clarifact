@@ -28,6 +28,7 @@ def source_view(response):
     if response.method == 'POST':
         form = source_form(response.POST)
         is_reliable = None
+
         if form.is_valid():
             source_name = form.cleaned_data['source']
             # print(source_name)
@@ -109,7 +110,7 @@ def check_source(source_name):
     if(not is_url(source_name)):
         return None
     
-    is_reliable = None
+    is_reliable = 'no'
     domain = urlparse(source_name).netloc
     if(domain):
         
@@ -135,20 +136,35 @@ def check_source(source_name):
         is_reliable = True
     else:
         is_reliable = False
-    return is_reliable
+    return (is_reliable, source_name)
 
 def sentiment_analysis(text):
     # sentiment = load(open('/home/rahulagg/clarifact/clarifact/clarifact_app/sentiment_model.pkl', 'rb'))
     sentiment = load(open('sentiment_model.pkl', 'rb'))
     result = sentiment.polarity_scores(text)
     senti = None
-    if((result['neg']>result['neu']) and (result['neg']>result['pos'])):
-        senti ='negative'
-    elif((result['neu']>result['neg']) and (result['neu']>result['pos'])):
-        senti ='neutral'
+    percentage = None
+    print(result)
+    print('compound = {}'.format(result['compound']))
+    if(result['compound']>0.2):
+        senti =  'positive'
+        percentage = result['pos']
+    elif(result['compound'] <-0.2):
+        senti = 'negative'
+        percentage = result['neg']
     else:
-        senti ='positive'
-    return senti
+        senti = 'netural'
+        percentage = result['neu']
+    # if((result['neg']>result['neu']) and (result['neg']>result['pos'])):
+    #     senti ='negative'
+    #     percentage = result['neg']
+    # elif((result['neu']>result['neg']) and (result['neu']>result['pos'])):
+    #     senti ='neutral'
+    #     percentage = result['neu']
+    # else:
+    #     senti ='positive'
+    #     percentage = result['pos']
+    return (senti,percentage)
 
 def fake_news(response):
     model = load(open('model.pkl', 'rb'))
@@ -161,32 +177,27 @@ def fake_news(response):
             # Reading the form content
             text = newsform.cleaned_data['news_text']
             title = newsform.cleaned_data['news_title']
-            date = newsform.cleaned_data['news_date']
+            
             author = newsform.cleaned_data['news_author']
             source = newsform.cleaned_data['source']
+            print('source .......{}'.format(source))
             news_bias = newsform.cleaned_data['news_bias']
 
 
-            # Date setting
-            # print(type(date))
-            if(date == datetime.date(1900, 1, 1)):
-                date = None
-            # print(date)
+          
 
             #Pac algorithm
             vec_result = vec.transform([text])
             result = model.predict(vec_result)[0]
             result_prob = model._predict_proba_lr(vec_result)[0]
-            fake_prob = round(result_prob[0], 3) * 100
-            real_prob = round(result_prob[1], 3) * 100
-            # if(fake_prob>80):
-            #     fake_prob = 79.6
-            # if(real_prob > 80):
-            #     real_prob = 79.6
+            fake_prob = round(result_prob[0]*100, 1) 
+            real_prob = round(result_prob[1]*100, 1) 
+
+            
 
             # Sentiment
-            sentiment = sentiment_analysis(text)
-            print(sentiment)
+            sentiment,percentage = sentiment_analysis(text)
+           
             sentiment_text = None
             if(news_bias == 'P' and sentiment =='positive'):
                 sentiment_text = 'Please check for the negative side'
@@ -203,7 +214,11 @@ def fake_news(response):
             print(news_bias)
            
             author_url =  author_check(author)
-            is_reliable = check_source(source)
+            if(source):
+                is_reliable, source_name = check_source(source)
+            else:
+                is_reliable = None
+                source_name = None
             print(is_reliable)
             return render(response, 'page/result.html',{'text':text,
                                                          'ans':result,
@@ -211,10 +226,13 @@ def fake_news(response):
                                                          'real_prob':real_prob,
                                                          'author':author,
                                                          'author_check':author_url,
-                                                         'date':date,
+                                                         
                                                          'title':title,
                                                          'is_reliable':is_reliable,
-                                                         'sentiment':sentiment_text})
+                                                         'source':source,
+                                                         'source_name':source_name,
+                                                         'sentiment':sentiment_text,
+                                                         'percentage':percentage})
     else:
         
         newsform = fake_news_form()
