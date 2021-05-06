@@ -678,12 +678,13 @@
 / 7. Fun Fact Section
 ------------------------------------------------------*/
 .funfact{
-    background: url(../images/bg/2.jpg) no-repeat center center / cover;
+    /* background: url(../images/bg/2.jpg) no-repeat center center / cover; */
+    background-color: #edeaea;
     padding: 0 0 100px
 }
-.BR{
+/* .BR{
     border-right: 1px solid #1a1a1a;
-}
+} */
 .singlefunfact{
     position: relative;
     padding-top: 113px;
@@ -702,7 +703,7 @@
     line-height: 1;
     letter-spacing: 2.4px;
     font-weight: 300;
-    color: #fff;
+    color: #000;
     margin: 0 0 25px;
     background: transparent;
 }
