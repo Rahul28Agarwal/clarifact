@@ -141,10 +141,10 @@
           <blockquote>
             {% if ans == 'Fake' %}
             <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
-            <h1>We are {{fake_prob}}% sure that the given news is {{ans}}</h1>
+            <h1>We are {{fake_prob}}% sure that the given news is not reliable</h1>
           {% elif ans == 'Real' %}
             <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
-            <h1>We are {{real_prob}}% sure that the given news is {{ans}}</h1>
+            <h1>We are {{real_prob}}% sure that the given news is reliable</h1>
           {% endif %}
           </blockquote>
          
