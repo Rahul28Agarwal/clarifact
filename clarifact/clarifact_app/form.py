@@ -33,9 +33,11 @@ class fake_news_form(forms.Form):
                                                               required=False)
     source = forms.CharField(label='',
                                 max_length=100, 
-                                widget=forms.TextInput(attrs={'class' : 'input-form','placeholder': 'Source URL(https://www.focusnews.com.ng/)'}))
+                                widget=forms.TextInput(attrs={'class' : 'input-form',
+                                'placeholder': 'Source URL(https://www.focusnews.com.ng/)'}),
+                                required=False)
 
-    CHOICES = [('P','Positive'),('N','Negative')]
+    CHOICES = [('P','Positive'),('N','Negative'),('Ne','Neutral')]
     news_bias= forms.CharField(label='What do you think about this topic?', widget=forms.RadioSelect(choices=CHOICES, attrs={
         'class':'radio_button'
     }))

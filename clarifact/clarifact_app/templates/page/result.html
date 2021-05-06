@@ -95,7 +95,10 @@
   
         <div class="timeline-content js--fadeInLeft">
           <h2>Source</h2>
-          {% if is_reliable == True %}
+          {% if is_reliable == None %}
+          <p>Please check the source.</p>
+
+          {% elif is_reliable == True %}
           <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
           
           <h1>{{filtered_source}} is a well-know news outlets</h1>
@@ -118,8 +121,13 @@
             <h2>Author </h2>
           </div>
           <!-- <div class="date">25 MAY 2016</div> -->
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-          <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
+          
+          {% if author %}
+          <p>Check some details about author</p>
+          <a href={{author_check}} class="bnt-more" href="javascript:void(0)">{{author}}</a>
+          {% else %}
+          <p>Please check the author.</p>
+          {% endif %}
         </div>
   
       </div>   
@@ -129,9 +137,20 @@
         <div class="timeline-img"></div>
   
         <div class="timeline-content js--fadeInLeft">
-          <div class="date">3 JUN 2016</div>
-          <h2>Quote</h2>
-          <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
+          <!-- <div class="date">3 JUN 2016</div> -->
+          <blockquote>
+            {% if ans == 'Fake' %}
+            <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
+            <h1>We are {{fake_prob}}% sure that the given news is {{ans}}</h1>
+          {% elif ans == 'Real' %}
+            <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
+            <h1>We are {{real_prob}}% sure that the given news is {{ans}}</h1>
+          {% endif %}
+          </blockquote>
+         
+            
+          <!-- <h2>Quote</h2>
+          <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote> -->
         </div>
       </div>   
   
@@ -140,14 +159,14 @@
         <div class="timeline-img"></div>
   
         <div class="timeline-content js--fadeInRight">
-          <h2>Title</h2>
-          <div class="date">22 JUN 2016</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-          <a class="bnt-more" href="javascript:void(0)">More</a>
+          <h2>Bias</h2>
+          <!-- <div class="date">22 JUN 2016</div> -->
+          <p>{{sentiment}}</p>
+          <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
         </div>
       </div>   
   
-      <div class="timeline-item">
+      <!-- <div class="timeline-item">
   
         <div class="timeline-img"></div>
   
@@ -159,9 +178,9 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
           <a class="bnt-more" href="javascript:void(0)">More</a>
         </div>
-      </div>   
+      </div>    -->
   
-      <div class="timeline-item">
+      <!-- <div class="timeline-item">
   
         <div class="timeline-img"></div>
   
@@ -173,9 +192,9 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
           <a class="bnt-more" href="javascript:void(0)">More</a>
         </div>
-      </div>  
+      </div>   -->
   
-      <div class="timeline-item">
+      <!-- <div class="timeline-item">
   
         <div class="timeline-img"></div>
   
@@ -184,9 +203,9 @@
           <h2>Quote</h2>
           <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
         </div>
-      </div>   
+      </div>    -->
   
-      <div class="timeline-item">
+      <!-- <div class="timeline-item">
   
         <div class="timeline-img"></div>
   
@@ -198,17 +217,17 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
           <a class="bnt-more" href="javascript:void(0)">More</a>
         </div>
-      </div>  
+      </div>   -->
   
       <div class="timeline-item">
   
         <div class="timeline-img"></div>
   
         <div class="timeline-content js--fadeInLeft">
-          <div class="date">1 SEP 2016</div>
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.</p>
-          <a class="bnt-more" href="javascript:void(0)">More</a>
+          <!-- <div class="date">1 SEP 2016</div> -->
+          <h2>Ask the Expert</h2>
+          <p>Still feel unsure about the credibility of the news that you are reading?</p>
+          <a href="{% url 'ask_expert' %}" class="bnt-more" href="javascript:void(0)">Consult a expert</a>
         </div>
       </div>   
   
