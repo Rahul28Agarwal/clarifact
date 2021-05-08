@@ -634,12 +634,12 @@
     -moz-transition: all ease 400ms;
 }
 .singlefolio .folioHover h2{
-    color: #d4ce1a;    
+    color: #fff;    
     transition: all ease 400ms;
     -webkit-transition: all ease 400ms;
     -moz-transition: all ease 400ms;
     text-align: center;
-    margin: 10px;
+    padding: 10px;
 }
 .singlefolio .folioHover p{
     color: #fff;    
