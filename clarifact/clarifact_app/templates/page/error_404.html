@@ -1,0 +1,40 @@
+{% extends "page/header.html" %}
+
+{% load static %}
+
+    {% block content %}
+    <!-- {% include 'page/preloader.html' %} -->
+    <!-- Header 01 -->
+    <!-- {% include 'page/section_nav_bar.html' %} -->
+
+
+<link rel="stylesheet" type="text/css" href=" {% static 'css/error_404.css' %} "/>
+
+<main style="padding: 71px 0px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <img style ='width: 92%;' src="{% static 'images/portfolio/error.png' %}" alt=""/>
+        </div>
+        <div class="col-md-6 align-self-center">
+          <h1>404</h1>
+          <h2>UH OH! You're lost.</h2>
+          <p>The page you are looking for does not exist.
+            How you got here is a mystery. But you can click the button below
+            to go back to the homepage.
+          </p>
+          <a href ="{% url 'index' %}"><button class="btn green">HOME</button></a> 
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- {% include 'page/footer.html' %} -->
+  <!-- Footer Section -->
+  
+  <!-- Bact To To -->
+  <!-- <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a> -->
+
+  
+  <script src="{% static 'js/error.js' %}"></script>
+{% endblock %}

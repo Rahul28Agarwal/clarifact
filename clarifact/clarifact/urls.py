@@ -16,9 +16,13 @@ Including another URLconf
 from django import urls
 from django.contrib import admin
 from django.urls import path, include
+from clarifact_app import views
+from django.conf.urls import handler404, handler500
 
-
+handler404 = 'clarifact_app.views.error_404_view'
+handler500 = 'clarifact_app.views.handler500'
 urlpatterns = [
     path('', include('clarifact_app.urls')),
     path('admin/', admin.site.urls),
+    
 ]

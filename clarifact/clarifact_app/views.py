@@ -10,6 +10,16 @@ import datetime
 from .models import source
 from urllib.parse import urlparse
 import re
+from django.conf.urls import handler404
+
+def error_404_view(request, exception=None):
+    
+    print('dfksaf;askdhfa')
+    return render(request,'page/error_404.html',status=404)
+
+def handler500(request):
+    print('handler500')
+    return render(request, 'page/500.html', status=500)
 
 def index(request):
     return render(request,'page/index.html')

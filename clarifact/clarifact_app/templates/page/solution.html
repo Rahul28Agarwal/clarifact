@@ -88,10 +88,12 @@
 									</fieldset>
 									<fieldset>
 										<!-- {% include 'page/ask_card.html' %} -->
-										<section class="commonSection porfolioDetail">
+										<section class="commonSection porfolioDetail" style='padding:2px; background:#fff'>
 											<div class="container">
 												<div class="row">
 													<div class="col-lg-12 col-sm-12 col-md-12">
+														<p style=' font-size: 20px;font-weight: bold;padding: 13px 0px;'>Let's walk through a case study. Take some time to understand which section of the news needs to study?
+															<br>Let's get started...</p>
 														<div class="portDetailThumb">
 															<img src="{% static 'images/portfolio/2021-05-06_021607.png' %}" alt=""/>
 														</div>
@@ -102,12 +104,18 @@
 												
 											</div>
 										</section>
-										<!-- <a href="{% url 'ask_expert' %}" ><button type="button" class="function_button btn btn-info">Learn More...</button></a> -->
+										
 										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
-										 
+										<input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
 										 
 									</fieldset>
-
+									<fieldset>
+										{% include 'page/last_card.html' %}
+										<a href="{% url 'fake_news' %}" ><button type="button" class="function_button btn btn-info">News Analyzer</button></a>
+										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+										<!-- <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' /> -->
+										 
+									</fieldset>
 								</form>
 							</div>
 						</div>
