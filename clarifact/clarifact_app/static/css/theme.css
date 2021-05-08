@@ -43,6 +43,7 @@
     top: 0;
     width: 100%;
     z-index: 5;
+    background: #ffffff;
     /* background-image: linear-gradient(90deg,#f5f2ff,#cec4c5); */
     padding: 28px 26px 0 32px;
     border-bottom: 2px solid rgba(255, 255, 255, .10);

@@ -14,7 +14,6 @@ from django.conf.urls import handler404
 
 def error_404_view(request, exception=None):
     
-    print('dfksaf;askdhfa')
     return render(request,'page/error_404.html',status=404)
 
 def handler500(request):
@@ -105,6 +104,7 @@ def author_check(author_name):
     return url
 
 def is_url(url):
+    
     regex = re.compile(
         r'^(?:http|ftp)s?://' # http:// or https://
         r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
@@ -112,25 +112,26 @@ def is_url(url):
         r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
         r'(?::\d+)?' # optional port
         r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+    
     return re.match(regex, url) is not None
 
 def check_source(source_name):
     if(not source_name):
-        return None
+        return (None, None)
     if(not is_url(source_name)):
-        return None
-    
+        return (None, None)
+
     is_reliable = 'no'
     domain = urlparse(source_name).netloc
+    
     if(domain):
-        
         domain = domain.split('.')
       
         if(domain[0] == 'www'):
             source_name = domain[1]
         else:
             source_name = domain[0]
-        print('source name = {}'.format(source_name))
+        
     else:
         domain = source_name.split('.')
     
@@ -146,6 +147,7 @@ def check_source(source_name):
         is_reliable = True
     else:
         is_reliable = False
+    
     return (is_reliable, source_name)
 
 def sentiment_analysis(text):
@@ -153,27 +155,18 @@ def sentiment_analysis(text):
     sentiment = load(open('sentiment_model.pkl', 'rb'))
     result = sentiment.polarity_scores(text)
     senti = None
-    percentage = None
-    print(result)
-    print('compound = {}'.format(result['compound']))
+    percentage = ''.join((str(round(result['compound'] * 100, 1)), '%'))
+    print('result of sentiment analyzer = {}'.format(result))
+    
     if(result['compound']>0.2):
         senti =  'positive'
-        percentage = result['pos']
+        
     elif(result['compound'] <-0.2):
         senti = 'negative'
-        percentage = result['neg']
+        
     else:
-        senti = 'netural'
-        percentage = result['neu']
-    # if((result['neg']>result['neu']) and (result['neg']>result['pos'])):
-    #     senti ='negative'
-    #     percentage = result['neg']
-    # elif((result['neu']>result['neg']) and (result['neu']>result['pos'])):
-    #     senti ='neutral'
-    #     percentage = result['neu']
-    # else:
-    #     senti ='positive'
-    #     percentage = result['pos']
+        senti = 'neutral'
+        
     return (senti,percentage)
 
 def fake_news(response):
@@ -190,7 +183,7 @@ def fake_news(response):
             
             author = newsform.cleaned_data['news_author']
             source = newsform.cleaned_data['source']
-            print('source .......{}'.format(source))
+           
             news_bias = newsform.cleaned_data['news_bias']
 
 
@@ -200,8 +193,8 @@ def fake_news(response):
             vec_result = vec.transform([text])
             result = model.predict(vec_result)[0]
             result_prob = model._predict_proba_lr(vec_result)[0]
-            fake_prob = round(result_prob[0]*100, 1) 
-            real_prob = round(result_prob[1]*100, 1) 
+            fake_prob = ''.join((str(round(result_prob[0]*100, 1)),'%' ))
+            real_prob = ''.join((str(round(result_prob[1]*100, 1)), '%'))
 
             
 
@@ -209,39 +202,43 @@ def fake_news(response):
             sentiment,percentage = sentiment_analysis(text)
            
             sentiment_text = None
-            if(news_bias == 'P' and sentiment =='positive'):
+            
+            if(news_bias == 'Positive' and sentiment =='positive'):
                 sentiment_text = 'Please check for the negative side'
-            if(news_bias == 'N' and sentiment =='negative'):
+                
+            if(news_bias == 'Negative' and sentiment =='negative'):
                 sentiment_text = 'Please check for the positive side'
-            if((news_bias == 'P' and sentiment =='negative') | (news_bias == 'N' and sentiment =='positive')):
+                your_bias = 'Negative'
+            if((news_bias == 'Positive' and sentiment =='negative') | (news_bias == 'Negative' and sentiment =='positive')):
                 sentiment_text =  'You are head towards right direction'
-            if(news_bias == 'Ne'):
-                sentiment_text = 'Please check the postive and negative side'
+               
             if(sentiment=='neutral'):
                 sentiment_text = 'Given article is not baised'
             
-
-            print(news_bias)
            
             author_url =  author_check(author)
+
+            
             if(source):
                 is_reliable, source_name = check_source(source)
             else:
                 is_reliable = None
                 source_name = None
-            print(is_reliable)
+           
+
             return render(response, 'page/result.html',{'text':text,
                                                          'ans':result,
                                                          'fake_prob':fake_prob,
                                                          'real_prob':real_prob,
                                                          'author':author,
                                                          'author_check':author_url,
-                                                         
+                                                         'your_bias':news_bias,
                                                          'title':title,
                                                          'is_reliable':is_reliable,
                                                          'source':source,
                                                          'source_name':source_name,
-                                                         'sentiment':sentiment_text,
+                                                         'sentiment':sentiment,
+                                                         'sentiment_text':sentiment_text,
                                                          'percentage':percentage})
     else:
         

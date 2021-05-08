@@ -97,15 +97,18 @@
 
         <div class="timeline-content js--fadeInLeft">
           <blockquote>
-          <h2>Source：<a href = {{source}} style='text-decoration: underline;'>{{source_name}}</a></h2>
+          
           {% if is_reliable == None %}
-          <p>Please check the source.</p>
+          <h2>Source</h2>
+          <p>Please check the source. It is a good indicator for detecting fake news</p>
 
           {% elif is_reliable == True %}
+            <h2>Source：<a href = {{source}} style='text-decoration: underline;'>{{source_name}}</a></h2>
             <h1>&#10004;&#65039;</h1>
           
           <p>{{source_name}} is a well-know news outlets</p>
             {% elif is_reliable == False  %}
+              <h2>Source：<a href = {{source}} style='text-decoration: underline;'>{{source_name}}</a></h2>
                 <h1>&#10060</h1>
                 <p>{{source_name}} doesn't seems to be a well-know news outlets.</p>
             {% endif %}
@@ -147,10 +150,18 @@
             <h2>Content:</h2>
             {% if ans == 'Fake' %}
             <h1>&#10060</h1>
-            <p>We are {{fake_prob}}% sure that the given news is {{ans}}</p>
+            <p>The given news article is not reliable</p>
+            <div class="progress">
+              <div  class="bg-danger progress-bar " role="progressbar" style="background-color: #d80000; width: {{fake_prob}} ; " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{fake_prob}}</div>
+            </div>
           {% elif ans == 'Real' %}
             <h1>&#10004;&#65039;</h1>
-            <p>We are {{real_prob}}% sure that the given news is {{ans}}</p>
+            <p>The News article is reliable</p>
+            <div class="progress">
+              <div  class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="background-color: #45c00b; width:{{real_prob}}">
+                  {{real_prob}}
+                </div>
+              </div>
           {% endif %}
           </blockquote>
          
@@ -168,8 +179,15 @@
           <blockquote>
           <h2>Bias: </h2>
           <!-- <div class="date">22 JUN 2016</div> -->
-          <p>{{sentiment}}</p>
-          <p>{{percentage}}</p>
+          <p>News senitment: {{sentiment}}</p>
+          <p>Your bias: {{your_bias}}</p>
+          <p>{{sentiment_text}}</p>
+          
+          <div class="progress">
+            <div  class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style=" width:{{percentage}}">
+              {{percentage}}
+              </div>
+            </div>
           <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
           </blockquote>
         </div>
