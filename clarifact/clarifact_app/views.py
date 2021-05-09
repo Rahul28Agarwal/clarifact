@@ -155,7 +155,12 @@ def sentiment_analysis(text):
     sentiment = load(open('sentiment_model.pkl', 'rb'))
     result = sentiment.polarity_scores(text)
     senti = None
-    percentage = ''.join((str(round(result['compound'] * 100, 1)), '%'))
+    
+    percentage = round(result['compound'] * 100, 1)
+    if(percentage < 0 ):
+        percentage = percentage * -1
+    
+    percentage = ''.join((str(percentage), '%'))
     print('result of sentiment analyzer = {}'.format(result))
     
     if(result['compound']>0.2):
@@ -193,8 +198,10 @@ def fake_news(response):
             vec_result = vec.transform([text])
             result = model.predict(vec_result)[0]
             result_prob = model._predict_proba_lr(vec_result)[0]
-            fake_prob = ''.join((str(round(result_prob[0]*100, 1)),'%' ))
-            real_prob = ''.join((str(round(result_prob[1]*100, 1)), '%'))
+            fake_prob = round(result_prob[0]*100, 1)
+            real_prob = round(result_prob[1]*100, 1)
+            str_fake_prob = ''.join((str(round(result_prob[0]*100, 1)),'%' ))
+            str_real_prob = ''.join((str(round(result_prob[1]*100, 1)), '%'))
 
             
 
@@ -204,16 +211,16 @@ def fake_news(response):
             sentiment_text = None
             
             if(news_bias == 'Positive' and sentiment =='positive'):
-                sentiment_text = 'Please check for the negative side'
+                sentiment_text = 'You are reading similar news comparing to your perspective, go find some opposing news!'
                 
             if(news_bias == 'Negative' and sentiment =='negative'):
-                sentiment_text = 'Please check for the positive side'
+                sentiment_text = 'You are reading similar news comparing to your perspective, go find some opposing news!'
                 your_bias = 'Negative'
             if((news_bias == 'Positive' and sentiment =='negative') | (news_bias == 'Negative' and sentiment =='positive')):
-                sentiment_text =  'You are heading towards right direction'
+                sentiment_text =  'You are reading opposing news comparing to your perspective, Great job!'
                
             if(sentiment=='neutral'):
-                sentiment_text = 'Given article is not baised'
+                sentiment_text = 'You are reading opposing news comparing to your perspective, Great job!'
             
            
             author_url =  author_check(author)
@@ -230,6 +237,8 @@ def fake_news(response):
                                                          'ans':result,
                                                          'fake_prob':fake_prob,
                                                          'real_prob':real_prob,
+                                                         'str_real_prob':str_real_prob,
+                                                         'str_fake_prob':str_fake_prob,
                                                          'author':author,
                                                          'author_check':author_url,
                                                          'your_bias':news_bias,
