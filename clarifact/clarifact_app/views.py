@@ -210,7 +210,7 @@ def fake_news(response):
                 sentiment_text = 'Please check for the positive side'
                 your_bias = 'Negative'
             if((news_bias == 'Positive' and sentiment =='negative') | (news_bias == 'Negative' and sentiment =='positive')):
-                sentiment_text =  'You are head towards right direction'
+                sentiment_text =  'You are heading towards right direction'
                
             if(sentiment=='neutral'):
                 sentiment_text = 'Given article is not baised'
