@@ -151,8 +151,8 @@ def check_source(source_name):
     return (is_reliable, source_name)
 
 def sentiment_analysis(text):
-    # sentiment = load(open('/home/rahulagg/clarifact/clarifact/clarifact_app/sentiment_model.pkl', 'rb'))
     sentiment = load(open('sentiment_model.pkl', 'rb'))
+    # sentiment = load(open('sentiment_model.pkl', 'rb'))
     result = sentiment.polarity_scores(text)
     senti = None
     
@@ -173,6 +173,16 @@ def sentiment_analysis(text):
         senti = 'neutral'
         
     return (senti,percentage)
+
+def category(percentage):
+    if(percentage>80):
+        return 'pretty confident'
+    elif(percentage>60):
+        return 'confident'
+    elif(percentage>50):
+        return 'somewhat confident'
+    else:
+        return 'not confident'
 
 def fake_news(response):
     model = load(open('model.pkl', 'rb'))
@@ -202,6 +212,8 @@ def fake_news(response):
             real_prob = round(result_prob[1]*100, 1)
             str_fake_prob = ''.join((str(round(result_prob[0]*100, 1)),'%' ))
             str_real_prob = ''.join((str(round(result_prob[1]*100, 1)), '%'))
+            
+            confidence_level = category(fake_prob if  fake_prob> real_prob else real_prob)
 
             
 
@@ -239,6 +251,7 @@ def fake_news(response):
                                                          'real_prob':real_prob,
                                                          'str_real_prob':str_real_prob,
                                                          'str_fake_prob':str_fake_prob,
+                                                         'confidence_level':confidence_level,
                                                          'author':author,
                                                          'author_check':author_url,
                                                          'your_bias':news_bias,

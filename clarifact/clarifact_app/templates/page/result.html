@@ -4,7 +4,7 @@
 
     {% block content %}
         <!-- Preloading -->
-       
+
         <!-- Preloading -->
         {% include 'page/preloader.html' %}
         <!-- Header 01 -->
@@ -19,12 +19,12 @@
                         <img src="images/blog/7.jpg" alt=""/>
                     </div>
                     <div class="blog_headings">
-                        
+
                         <h2>{{title}}</h2>
                         {% if date %}
                             <span class="blog_date">{{date}}</span>
                         {% endif %}
-                        
+
                     </div>
                     <div class="blog_details">
                         <p style='text-align: justify'>
@@ -44,15 +44,15 @@
                         <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
                         {% endif %}
                         <h1>We are 80% sure that the given news is {{ans}}</h1>
-                        
+
                     </div>
-                  
+
                 </div>
             </div>
-            
+
         </div>
     </div>
-    
+
 </section>
 {% if is_reliable != None %}
 <section class="commonSection blogDetails" style='padding:0px'>
@@ -63,24 +63,24 @@
                     <div class="blog_thumb">
                         <img src="images/blog/7.jpg" alt=""/>
                     </div>
- 
+
 
                     <div class="post_author">
                         {% if is_reliable == True %}
                             <img src="{% static 'images/home_1/rating-true.png' %} " alt="">
-                            
+
                             <h1>{{filtered_source}} is a well-know news outlets</h1>
                         {% elif is_reliable == False  %}
                             <img src="{% static 'images/home_1/rating-false.png' %} " alt="">
                             <h1>{{filtered_source}} doesn't seems to be a well-know news outlets.</h1>
                         {% endif %}
-                        
-                        
+
+
                     </div>
-                  
+
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
@@ -97,7 +97,7 @@
 
         <div class="timeline-content js--fadeInLeft">
           <blockquote>
-          
+
           {% if is_reliable == None %}
           <h2>Source</h2>
           <p>Please check the source. It is a good indicator for detecting fake news</p>
@@ -105,21 +105,21 @@
           {% elif is_reliable == True %}
             <h2>Source：<a href = {{source}} style='text-decoration: underline;'>{{source_name}}</a></h2>
             <h1>&#10004;&#65039;</h1>
-          
-          <p>{{source_name}} is a well-know news outlet.</p>
+
+          <p>{{source_name}} is a well-known news outlet.</p>
             {% elif is_reliable == False  %}
               <h2>Source：<a href = {{source}} style='text-decoration: underline;'>{{source_name}}</a></h2>
                 <h1>&#10060</h1>
                 <p>{{source_name}} doesn't seem to be a well-known news outlet.</p>
             {% endif %}
           </blockquote>
-          
+
           <!-- <p>{{filtered_source}} is a well-know news outlets</p> -->
           <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
         </div>
       </div>
 
-  
+
       <div class="timeline-item">
 
         <div class="timeline-img"></div>
@@ -128,7 +128,7 @@
           <blockquote>
           <h2>Author：{{author}}</h2>
           <!-- <div class="date">25 MAY 2016</div> -->
-          
+
           {% if author %}
           <p>Check more details about {{author}}</p>
           <a href={{author_check}} class="bnt-more" href="javascript:void(0)">View Profile</a>
@@ -137,82 +137,79 @@
           {% endif %}
           </blockquote>
         </div>
-  
-      </div>   
-  
+
+      </div>
+
       <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content js--fadeInLeft">
           <!-- <div class="date">3 JUN 2016</div> -->
           <blockquote>
             <h2>Content:</h2>
             {% if ans == 'Fake' %}
             <h1>&#10060</h1>
-            <p>The given news article is not reliable</p>
+            <p>We are {{confidence_level}} that the structure of the news article is found to be <strong>more likely</strong> used in fake news.</p>
             <div class="progress">
 
-            
-            {% if fake_prob < 70 %}
-            
+
+
+
               <div  class="bg-danger progress-bar " role="progressbar" style="background-color: #d80000; width: {{str_fake_prob}} ; " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{str_fake_prob}}</div>
-            
-            {% else %}
-            
-              <div  class="bg-danger progress-bar " role="progressbar" style="background-color: #45c00b; width: {{str_fake_prob}} ; " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{str_fake_prob}}</div>
-            
-            {% endif %}
+
+
+
+
+
+
             </div>
           {% elif ans == 'Real' %}
             <h1>&#10004;&#65039;</h1>
-            <p>The News article is reliable</p>
+            <p>We are {{confidence_level}} that the structure of the news article is found to be <strong>less likely</strong> used in fake news.</p>
             <div class="progress">
-              {% if real_prob < 70 %}
-            
-              <div  class="bg-danger progress-bar " role="progressbar" style="background-color: #d80000; width: {{str_real_prob}} ; " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{str_real_prob}}</div>
-            
-            {% else %}
-            
+
+
               <div  class="bg-danger progress-bar " role="progressbar" style="background-color: #45c00b; width: {{str_real_prob}} ; " aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{str_real_prob}}</div>
-            
-            {% endif %}
-           
+
+
+
           {% endif %}
           </blockquote>
-         
-            
+
+
           <!-- <h2>Quote</h2>
           <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote> -->
         </div>
-      </div>   
-  
+      </div>
+
       <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content js--fadeInRight">
           <blockquote>
           <h2>Bias: </h2>
           <!-- <div class="date">22 JUN 2016</div> -->
-          <p><strong>News senitment:</strong> {{sentiment}}</p>
-          <p><strong>Your bias:</strong> {{your_bias}}</p>
-          <p>{{sentiment_text}}</p>
-          
+          <p><strong>News sentiment:</strong> {{percentage}} {{sentiment}}</p>
           <div class="progress">
             <div  class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style=" width:{{percentage}}">
               {{percentage}}
               </div>
             </div>
+          <p><strong>Your bias:</strong> {{your_bias}}</p>
+          <p>{{sentiment_text}}</p>
+
+
           <!-- <a class="bnt-more" href="javascript:void(0)">More</a> -->
           </blockquote>
         </div>
-      </div>   
-  
+      </div>
+
       <!-- <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content timeline-card js--fadeInLeft">
           <div class="timeline-img-header">
             <h2>Card Title</h2>
@@ -222,11 +219,11 @@
           <a class="bnt-more" href="javascript:void(0)">More</a>
         </div>
       </div>    -->
-  
+
       <!-- <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content timeline-card js--fadeInRight">
           <div class="timeline-img-header">
             <h2>Card Title</h2>
@@ -236,22 +233,22 @@
           <a class="bnt-more" href="javascript:void(0)">More</a>
         </div>
       </div>   -->
-  
+
       <!-- <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content js--fadeInLeft">
           <div class="date">5 AUG 2016</div>
           <h2>Quote</h2>
           <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta explicabo debitis omnis dolor iste fugit totam quasi inventore!</blockquote>
         </div>
       </div>    -->
-  
+
       <!-- <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content timeline-card js--fadeInRight">
           <div class="timeline-img-header">
             <h2>Card Title</h2>
@@ -261,11 +258,11 @@
           <a class="bnt-more" href="javascript:void(0)">More</a>
         </div>
       </div>   -->
-  
+
       <div class="timeline-item">
-  
+
         <div class="timeline-img"></div>
-  
+
         <div class="timeline-content js--fadeInLeft">
           <blockquote>
           <!-- <div class="date">1 SEP 2016</div> -->
@@ -274,13 +271,13 @@
           <a href="{% url 'ask_expert' %}" class="bnt-more" href="javascript:void(0)">Seek further help </a>
           </blockquote>
         </div>
-      </div>   
-  
-  
-  
+      </div>
+
+
+
     </div>
   </section>
-  {% include 'page/footer.html' %} 
+  {% include 'page/footer.html' %}
 <!-- Bact To To -->
 <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
 <!-- Bact To To -->

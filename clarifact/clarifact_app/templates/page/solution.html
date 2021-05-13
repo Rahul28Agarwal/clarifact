@@ -104,19 +104,25 @@
 												
 											</div>
 										</section>
+
+											
+												<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
+											
+												
+											
+											
+												<h4 style='padding-top: 18px; display: inline-block'>Do you think you are ready? Try our <i class="fa fa-arrow-right"></i></h4>
+											
+											
+												<a href="{% url 'fake_news' %}" ><button style ='float:right' type="button" class="function_button btn btn-info">News Analyzer</button></a>
+											
 										
-										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
-										<input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' />
+										
+										
+										
 										 
 									</fieldset>
-									<fieldset>
-										{% include 'page/last_card.html' %}
-										<a href="{% url 'fake_news' %}" ><button type="button" class="function_button btn btn-info">News Analyzer</button></a>
-										<input type="button" name="previous" class="previous action-button" value="Previous" style='float: left;' />
-									
-										<!-- <input type="button" name="next" class="next action-button" value="Next Step" style='float: right;' /> -->
-										 
-									</fieldset>
+
 								</form>
 							</div>
 						</div>

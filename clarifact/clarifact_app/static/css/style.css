@@ -14,7 +14,7 @@ html {
 }
 
 body {
-	font-family: sans-serif;
+	font-family: RALEWAY;
 }
 /*form styles*/
 #msform {
@@ -54,7 +54,7 @@ body {
 	margin-bottom: 10px;
 	width: 100%;
 	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: RALEWAY;
 	color: #2C3E50;
 	font-size: 13px;
 }
