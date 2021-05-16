@@ -1865,7 +1865,7 @@
 .pageBanner {
     position: relative;
     min-height: 465px;
-    background: url(../images/bg/detect_fake.png) no-repeat center center / cover;
+    background: url(../images/bg/step.png) no-repeat center center / cover;
     padding-top: 224px;
 }
 .authopageBanner {
@@ -3436,13 +3436,13 @@ textarea.input-form:focus{
   
   .item .btn {
     position: absolute;
-    
+    font-family: raleway;
     top: 56%;
     left: 80%;
 
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: #d84d17;
+    background-color: #1ed8ca;
     color: white;
     font-size: 16px;
     padding: 17px 30px;

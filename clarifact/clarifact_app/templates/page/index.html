@@ -41,31 +41,31 @@
         
 
         <!-- Revolution Slider -->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style='height:570px'>
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <!-- <li data-target="#myCarousel" data-slide-to="2"></li> -->
             </ol>
         
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item active">
+                <!-- <div class="item active">
                     <img  src="{% static 'images/slider/whoisreliable01.png' %} " alt="Chicago" style="width:100%;">
       
-                  </div>
+                  </div> -->
         
-              <div class="item ">
+              <div class="item active ">
                 <img src="{% static 'images/slider/spot_fake_news.png' %} " alt="Los Angeles" style="width:100%;">
                 
-                <a  href="{% url 'solution' %}" ><button style='top: 42%; left: 37%;' class="btn">Let's start</button></a>
+                <a  href="{% url 'solution' %}" ><button style='top: 40%; left: 44%;' class="btn">Let's start</button></a>
     
               </div>
               <div class="item ">
                 <img src="{% static 'images/slider/news_analyzer.png' %} " alt="Los Angeles" style="width:100%;">
                 
-                <a  href="{% url 'fake_news' %}" ><button class="btn" style ='top: 45%;'>Check Your News</button></a>
+                <a  href="{% url 'fake_news' %}" ><button class="btn" style ='top: 40%;'>Check Your News</button></a>
     
               </div>
         

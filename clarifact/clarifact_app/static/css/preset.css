@@ -90,6 +90,7 @@ ul li{
 .common_btn span {
     position: relative;
     z-index: 2;
+    font-family: raleway;
 }
 .common_btn:after {
     content: "";
