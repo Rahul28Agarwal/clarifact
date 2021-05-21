@@ -8,7 +8,7 @@ def index(request):
     return render(request,'page/index.html')
 
 def spot_fake_news(request):
-    return render(request, 'page/about.html')
+    return render(request, 'page/index.html')
 def ask_expert(request):
     return render(request, 'page/ask_expert.html')
 def read_beyond(request):
